@@ -1,0 +1,126 @@
+// SCSS File
+// cards.scss
+// Modified April 24, 2017
+
+
+// cards style
+
+.cards {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+// card style
+
+.card {
+    
+    padding: 34px 24px;
+    background-color: $theme-section-color;
+    flex-basis: 0;
+    flex-grow: 1;
+
+    @media (max-width: $screen-md-max) {
+
+        flex: 50%;
+    }
+    @media (max-width: $screen-sm-max) {
+
+        flex: auto;
+    }
+
+    & + .card {
+
+        border-left: 1px solid $white-color;
+    }
+}
+
+// card media style
+
+.card-media {
+
+    height: 260px;
+    margin: -34px -24px;
+    margin-bottom: 24px;
+    background-color: $theme-section-color;
+    position: relative;
+    display: block;
+    z-index: 1;
+
+    a {
+        
+        height: inherit;
+        transition: background-color 0.6s ease-in-out;
+        position: relative;
+        z-index: 1;
+        display: block;
+
+        &:hover {
+
+            transition: background-color 0.1s ease-in-out;
+            background-color: $black-color;
+
+            img {
+
+                opacity: 0.7;
+            }
+        }
+        img {
+
+            transition: opacity 0.2s ease-in-out;
+        }
+    }
+    figcaption {
+
+        padding: 8px 24px 9px;
+        user-select: none;
+        background-color: rgba($theme-feature-color, 0.9);
+        position: absolute;
+        z-index: 2;
+        left: 24px;
+        top: 0;
+        color: $white-color;
+    }
+    &.cover-photo {
+
+        a {
+
+            &:hover {
+
+                background-color: rgba($theme-feature-color, 0.3);
+            }
+        }
+    }
+}
+
+// card data style
+
+.card-data {
+
+    h2, h3, h4 {
+
+        margin: 0;
+        margin-bottom: 14px;
+        font-size: $font-size-h4;
+        color: $title-color;
+    }
+    p {
+
+        margin: 0;
+        margin-top: 8px;
+        color: $text-color;
+    }
+    a {
+
+        text-decoration: none;
+        color: inherit;
+        
+        &:hover {
+
+            text-decoration: none;
+            color: $link-color;
+        }
+    }
+}
+

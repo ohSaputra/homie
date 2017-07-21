@@ -1,0 +1,91 @@
+// SCSS File
+// form-checkbox.scss
+// Modified April 24, 2017
+
+
+// checkbox style
+
+.checkbox {
+
+    margin: 0;
+    margin-top: 2px;
+    
+    label {
+
+        padding: 4px 0;
+        padding-right: 24px;
+        color: $text-color;
+    }
+    em {
+
+        padding-left: 30px;
+        font-style: normal;
+        display: block;
+        color: $label-dark-color;
+    }
+    &.checkbox-stack {
+
+        label {
+
+            padding: 0;
+            display: block;
+        }
+        label + label {
+
+            margin-top: 8px;
+        }
+    }
+    &.plain {
+
+         input[type='checkbox'] {
+
+            background-color: $white-color;
+        }
+    }
+    &:focus {
+
+        outline: none;
+    }
+    input[type='checkbox'] {
+
+        margin-left: 0;
+        position: static;
+    }
+}
+input[type='checkbox'] {
+
+    width: 22px;
+    height: 22px;
+    margin: 0;
+    margin-right: 4px;
+    vertical-align: -4px;
+    border-radius: $input-border-radius;
+    border: 1px solid $input-dark-border;
+    border-bottom-color: $input-light-border;
+    border-right-color: $input-light-border;
+    background-color: $input-bg-color;
+    position: relative;
+    -moz-appearance: checkbox;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+
+    &:focus {
+
+        outline: none;
+    }
+    .form-error & {
+
+        background-color: rgba($state-danger, 0.04);
+        border-color: $state-danger;
+    }
+}
+input[type='checkbox']:checked {
+
+    border-color: $input-border-focus;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAnCAYAAABJ0cukAAAAAXNSR0IArs4c6QAABMRJREFUWAntWX1oVWUY/73nbC7bTLpncyw0GEEJrr9UShiYjOagRGLubphBOmgQjLCIoE8pgoiCPkAxKshV3t27ogwVFbIsqSAkkxEVfTLStZ2lU2Rz956n57l313vuuedzm+4GvX/c857n+T3P+T3vx/N+XOA/XlTZ808M34QKvRmEamToa3TVnbBzLt8AduzQsKL3CSj1NBOusJHug5V+EPElF0RmV9gwZVBt6t0FqAdcmNwHTc+wfKvoyrMHUqMvQGmPuZDPiwigW7HJGNTykrJ5psxHAsgLVWn426RSXkNowNzG3F4SYsGFagRTPj2QHL0HpN4IJj6NsOik1MpjDvSPrIOuH2Q+VdP0/B9E36DDWMMgmv8hlBhdDV19HIH8ODd7t5CXKOd3CL0/uhy6doAHwiIhE1iIJmBlNkj2yWPnrwf2mstQicNMpDZPJuCZhmXF0bnkmB03PwEkT9fxMDjCLb/MTsanTkx+GzrrPnFirn4Ab40sguIJq3CLk4znu0XbEa/tc9Nf3Tnw2s9VuE7fx+RXupFxl9GziBuvuuu8JnEyqbPB3KZY8dlg9LPXO7zIlMgJO3nCPlMitwmKh1DCvJ1T2oucoVZhYGyScZ/BwkOIx/602cykqqC1vMmGG0MbE+3F4Ou9QfhCK/eb7Uw+wQbFQQFnOYgNHMSXQc489QPmy9yhD3vqnQqigxj7bSN6Vk05Vc73XADJscVQ9CPvveudgOw74RwyU2vRVZ9dvl0xXsLU6OO8OXveS10qp+MwJ1vRc8PFUl2pZHoSZ9Z6khcbhcXQKw5BTkdRSmqsJxJ5wvc4P353WPJCJReA0m4O5CW9o1ceQd9IQyBWAANmnH93hsLmQL+A0uuxtfFsBJvpAAi/hzJSaMRC7TDe++N6X3zKbOWdZR/33HQP+6JZSacxOdXKx8QzQUinPveBdPoLdnLeqXR/V01YULMfu/+61lUvmQz4kMkvcNU7hYR/YKn1uLf+V6cqzHsugM31w5xpngpjkMUotQaxqg+w+9vKIpvEWBNnsgM8n6qL5J4vdBFEd3GGO+UJCVAUulhWOyLJ1eGKUm2INe6B3B5ISZ5phE6HuOX9h1feO2GKG62dV9mv8qKZPAvrgFjLaqm19HPaaQ/tTFZLSj8HrULWiXBZirdm3FibmTx/a3alOADxJfuVhth+HgYtEVybjDVC4y3wvU5sV2i8D7A0AAEn/67hu5dPuSdW+9jOTGVZT/LOMsLC5v8Z9wDE5p0hA9ULeVio5f4uImiJXuGz7PYIFoFQ7wDE9F1zKarUcZ6YNwZ6CgIQ9qAjdj/DsmfZIHhYfSELuVlsMYZAGV6UMOKmDi0j7MPgyW7Gzyl5+b5/D+QZJkdWQtOOMjzc4TtvJ0/C57hwro23CBN28VzVwwUgX4t6d5NjeAITtA5bjPG5Iuz04z+E7OjOuqPIWF3conIzHKLQT7Am264keSERPgBBd9Z+xOcGtytv0doKDfH+5k7EG2Y3d2wevarRAhAvm4y3eRV91Mshy02kiXeWsz6G+nyioIoegNh2GHyDTN0cSPZfksvuCN/hktWMrtofLsuucCX8JHYjIoeba7RmzmVL+f+rU1DDxxBfcckN+r/MowX+BdE4QDwmd9XgAAAAAElFTkSuQmCC');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 14px 11px;
+}
+

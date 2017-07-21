@@ -1,0 +1,39 @@
+// SCSS File
+// grid.scss
+// Modified April 24, 2017
+
+
+// grid style
+
+.grid {
+
+    margin: 0 -20px -6px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    @media (max-width: $screen-xs-max) {
+
+        margin: 0 -10px;
+    }
+
+    .cell {
+
+        width: calc(25% - 40px);
+        margin: 0 20px 40px;
+        
+        @media (max-width: $screen-md-max) {
+
+            width: calc(33.3% - 40px);
+        }
+        @media (max-width: $screen-sm-max) {
+
+            width: calc(50% - 40px);
+        }
+        @media (max-width: $screen-xs-max) {
+
+            width: calc(50% - 20px);
+            margin: 0 10px 20px;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+// SCSS File
+// alert.scss
+// Modified April 24, 2017
+
+
+// alert style
+
+.alert { 
+   	
+   	position: relative;
+
+    .icon {
+
+    	margin-right: 10px;
+    	vertical-align: -6px;
+    }
+    .close {
+
+        opacity: 0.4;
+    	position: absolute;
+    	top: 14px;
+    	right: 14px;
+    }
+    a {
+
+        text-decoration: underline;
+    }
+}
+
+// alert square style
+
+.alert-square {
+
+    border-radius: 0;
+}
+
+// alert dismissible style
+
+.alert-dismissible {
+
+	padding-right: 34px;
+}
+

@@ -1,0 +1,91 @@
+// SCSS File
+// form-radio.scss
+// Modified April 24, 2017
+
+
+// radio style
+
+.radio {
+
+    margin: 0;
+    margin-top: 2px;
+    
+    label {
+
+        padding: 4px 0;
+        padding-right: 24px;
+        color: $text-color;
+    }
+    em {
+
+        padding-left: 30px;
+        font-style: normal;
+        display: block;
+        color: $label-dark-color;
+    }
+    &.radio-stack {
+
+        label {
+
+            padding: 0;
+            display: block;
+        }
+        label + label {
+
+            margin-top: 8px;
+        }
+    }
+    &.plain {
+
+         input[type='radio'] {
+
+            background-color: $white-color;
+        }
+    }
+    &:focus {
+
+        outline: none;
+    }
+    input[type='radio'] {
+
+        margin-left: 0;
+        position: static;
+    }
+}
+input[type='radio'], .option input[type='checkbox'] {
+
+    width: 22px;
+    height: 22px;
+    margin: 0;
+    margin-right: 4px;
+    vertical-align: -4px;
+    border-radius: 50%;
+    border: 1px solid $input-dark-border;
+    border-bottom-color: $input-light-border;
+    border-right-color: $input-light-border;
+    background-color: $input-bg-color;
+    position: relative;
+    -moz-appearance: radio;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+
+    &:focus {
+
+        outline: none;
+    }
+    .form-error & {
+
+        background-color: rgba($state-danger, 0.04);
+        border-color: $state-danger;
+    }
+}
+input[type='radio']:checked, .option input[type='checkbox']:checked {
+
+    border-color: $input-border-focus;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeBAMAAADJHrORAAAAJ1BMVEUAAAAArO0Aq+0ArO0Aq+4Aq+0Aq+4Aq+4Aqe0Aqu4An98ArO0ArO6CG2QdAAAADHRSTlMA5vPZv4yFdlM8CKjvXHhZAAAAgUlEQVQY02MAg6nOSiaRDDDAVXgGBMQXQPmNZyBAAsJlOwMDCWD+Hjj/NEIaoaAHiX8CaLgMEv/gAgb2M8iggIERhS/AMAeFf5IhBoV/lMEHhX+EwQaFf5hBB4V/CJ2Prh7dPHT70N2D7l50/6D7Fy080MMLMzwxwxsRH1jiCz0+ATBVEpZbbDyOAAAAAElFTkSuQmCC');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+}
+

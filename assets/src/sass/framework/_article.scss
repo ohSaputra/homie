@@ -1,0 +1,90 @@
+// SCSS File
+// article.scss
+// Modified April 24, 2017
+
+
+// article style
+
+.article {
+    
+    .content {
+
+        padding-top: 24px;
+        padding-bottom: 44px;
+
+        & + .content {
+
+            padding-top: 0;
+        }
+        &.content-fit {
+
+            padding-bottom: 0;
+        }
+    }
+    .form {
+        
+        margin-top: 34px;   
+    }
+}
+
+// story style
+
+.story {
+
+    width: calc(100% - 320px);
+    padding-right: 24px;
+    float: left;
+
+    @media (max-width: $screen-lg-min) {
+
+        width: calc(100% - 260px);
+    }
+    @media (max-width: $screen-md-min) {
+
+        width: 100%;
+        padding-right: 0;
+    }
+
+    &.story-wide {
+
+        width: 100%;
+        padding: 0;
+        float: none;
+    }
+
+    > *:first-child {
+
+        margin-top: 1.882rem;
+    }
+}
+
+// sidebar style
+
+.sidebar {
+
+    width: 320px;
+    padding-left: 24px;
+    float: left;
+    
+    @media (max-width: $screen-lg-min) {
+
+        width: 260px;
+    }
+    @media (max-width: $screen-md-min) {
+
+        display: none;
+    }
+}
+
+// sidebar sticky style
+
+.sidebar-sticky {
+
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -o-sticky;
+    position: -ms-sticky;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+}

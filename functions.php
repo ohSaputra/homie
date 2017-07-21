@@ -1,157 +1,154 @@
-<?php
+<?php 
 /**
- * homie functions and definitions
+ * Compare Master functions and definitions
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ * When using a child theme you can override certain functions (those wrapped
+ * in a function_exists() call) by defining them first in your child theme's
+ * functions.php file. The child theme's functions.php file is included before
+ * the parent theme's file, so the child theme functions would be used.
  *
- * @package homie
+ * @link https://codex.wordpress.org/Theme_Development
+ * @link https://codex.wordpress.org/Child_Themes
+ *
+ * Functions that are not pluggable (not wrapped in function_exists()) are
+ * instead attached to a filter or action hook.
+ *
+ * For more information on hooks, actions, and filters,
+ * @link https://codex.wordpress.org/Plugin_API
+ *
+ * @package WordPress
+ * @subpackage Compare_Master
+ * @since Compare Master 1.0
  */
 
-if ( ! function_exists( 'homie_setup' ) ) :
+	
 /**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function homie_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on homie, use a find and replace
-	 * to change 'homie' to the name of your theme in all the template files.
-	 */
-	load_theme_textdomain( 'homie', get_template_directory() . '/languages' );
-
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
-
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	add_theme_support( 'title-tag' );
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-	 */
-	add_theme_support( 'post-thumbnails' );
-
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'homie' ),
-	) );
-
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'homie_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
-
-	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
-
-	/**
-	 * Add support for core custom logo.
-	 *
-	 * @link https://codex.wordpress.org/Theme_Logo
-	 */
-	add_theme_support( 'custom-logo', array(
-		'height'      => 250,
-		'width'       => 250,
-		'flex-width'  => true,
-		'flex-height' => true,
-	) );
+* Adding child theme
+*
+*/
+function c88_child_enqueue_styles() {
+    wp_enqueue_style( 'child-style',
+        get_stylesheet_directory_uri() . '/assets/dist/css/style.css',
+        wp_get_theme()->get('Version')
+    );
 }
-endif;
-add_action( 'after_setup_theme', 'homie_setup' );
+
+add_action( 'wp_enqueue_scripts', 'c88_child_enqueue_styles' );
+
 
 /**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function homie_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'homie_content_width', 640 );
+* Defines the main variables used in this theme (should be a unique name)
+*
+*/
+
+defined('THEME_NAME') ? '' : define('THEME_NAME', 'cf');
+defined('THEME_ASSETS') ? '' : define('THEME_ASSETS', get_stylesheet_directory_uri());
+defined('THEME_ADMIN_ASSETS') ? '' : define('THEME_ADMIN_ASSETS', get_template_directory_uri().'/framework/admin');
+
+/**
+* Defines a google map API Key
+*
+*/
+
+defined('GOOGLE_API_KEY') ? '' : define('GOOGLE_API_KEY', 'AIzaSyC3PHKAQrWC2w7lW89Xu1QsRPPtNgxDQr8');
+
+/**
+* Includes framework templates to set up theme options
+*
+*/
+
+include_once(locate_template('framework/master/setup-theme.php'));
+
+/**
+* Initializes and registers custom theme options
+*
+*/
+
+include_once(locate_template('framework/options/menu-options.php'));
+include_once(locate_template('framework/options/theme-options.php'));
+include_once(locate_template('framework/options/theme-options-blog.php'));
+include_once(locate_template('framework/options/theme-options-forum.php'));
+include_once(locate_template('framework/options/theme-options-microdata.php'));
+include_once(locate_template('framework/options/theme-options-open-graph.php'));
+include_once(locate_template('framework/options/theme-options-seo.php'));
+include_once(locate_template('framework/options/page-options.php'));
+include_once(locate_template('framework/options/post-options.php'));
+include_once(locate_template('framework/options/category-options.php'));
+include_once(locate_template('framework/options/widget-banner.php'));
+include_once(locate_template('framework/options/widget-banner-content.php'));
+include_once(locate_template('framework/options/widget-html-content.php'));
+include_once(locate_template('framework/options/widget-most-discussed-posts.php'));
+include_once(locate_template('framework/options/widget-newsletter.php'));
+include_once(locate_template('framework/options/widget-popular-posts.php'));
+include_once(locate_template('framework/options/widget-testimonial.php'));
+
+/**
+* Enable support for Post Thumbnails on posts and pages
+*
+*/
+
+add_theme_support('post-thumbnails');
+set_post_thumbnail_size( 1200, 9999 );
+
+add_image_size('post-large', 795, 398, array('left', 'top'));
+add_image_size('post-medium', 560, 280, array('left', 'top'));
+add_image_size('post-widget', 400, 206, array('left', 'top'));
+add_image_size('post-carousel', 1000, 800, array('left', 'top'));
+
+/**
+* Removes unwanted HTML markup elements in the header
+*
+*/
+
+remove_action('wp_head', 'noindex', 1);
+remove_action('wp_head', 'feed_links', 2);
+remove_action('wp_head', 'feed_links_extra', 3);
+remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'wlwmanifest_link');
+remove_action('wp_head', 'index_rel_link');
+remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+remove_action('wp_head', 'start_post_rel_link', 10, 0);
+remove_action('wp_head', 'adjacent_posts_rel_link');
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+remove_action('wp_head', 'rest_output_link_wp_head', 10);
+remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
+remove_action('wp_head', 'check_and_publish_future_post');
+remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+remove_action('wp_head', 'wp_print_styles');
+remove_action('wp_head', 'wp_generator');
+remove_action('wp_head', 'rel_canonical');
+remove_action('wp_head', 'locale_stylesheet');
+
+/**
+* Removes unwanted paragraph tags generated by wordpress
+*
+*/
+
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
+
+/**
+* Removes unwanted emoji code in the header
+*
+*/
+
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+/**
+* Enqueuing scripts
+*
+*/
+
+function cf_enqueue_scripts() {
+    wp_deregister_script('jquery');
+    wp_register_script('jquery', 'https://code.jquery.com/jquery-3.2.1.min.js');
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('cf-scripts', THEME_ASSETS.'/js/script.min.js');
 }
-add_action( 'after_setup_theme', 'homie_content_width', 0 );
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function homie_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'homie' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'homie' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'homie_widgets_init' );
+add_action( 'wp_enqueue_scripts', 'cf_enqueue_scripts' );
 
-/**
- * Enqueue scripts and styles.
- */
-function homie_scripts() {
-	wp_enqueue_style( 'homie-style', get_stylesheet_uri() );
-
-	wp_enqueue_script( 'homie-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'homie-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'homie_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
+?>

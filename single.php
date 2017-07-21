@@ -1,35 +1,53 @@
 <?php
 /**
- * The template for displaying all single posts
+ * The template for displaying a single blog post
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ * @link http://codex.wordpress.org/Template_Hierarchy
  *
- * @package homie
+ * @package WordPress
+ * @subpackage Compare_Master
+ * @since Compare Master 1.0
  */
 
-get_header(); ?>
+?>
+<?php get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+            <!-- content starts -->
+                <div class="layout-content">
 
-		<?php
-		while ( have_posts() ) : the_post();
+                    <!-- main starts -->
+                        <main class="main" role="main">
 
-			get_template_part( 'template-parts/content', get_post_format() );
+                            <?php get_template_part('includes/menu/breadcrumb', ''); ?>
+                            <?php get_template_part('includes/blog/promo', ''); ?>
 
-			the_post_navigation();
+                            <!-- article starts -->
+                                <article class="article article-sidebar">
+                                    <div class="content container">
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+                                        <div class="story">
+                                            <?php get_template_part('includes/blog/post', ''); ?>
+                                        </div>
 
-		endwhile; // End of the loop.
-		?>
+                                        <aside class="sidebar">
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+                                            <?php get_sidebar(); ?>
 
-<?php
-get_sidebar();
-get_footer();
+                                        </aside>
+
+                                    </div>
+
+                                </article>
+                            <!-- article ends -->
+
+                            <?php get_template_part('includes/blog/post', 'related'); ?>
+
+                        </main>
+                    <!-- main ends -->
+
+                    <?php get_template_part('includes/layout/footer', ''); ?>
+
+                </div>
+            <!-- content ends -->
+
+<?php get_footer(); ?>

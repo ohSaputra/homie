@@ -1,0 +1,253 @@
+// SCSS File
+// buttons.scss
+// Modified April 24, 2017
+
+
+// btn style
+
+.btn {
+
+    margin-bottom: 0;
+    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius-base);
+    white-space: nowrap;
+    font-weight: $btn-font-weight;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    background-image: none;
+    touch-action: manipulation;
+    @include user-select(none);
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+
+    @media (max-width: $screen-xs-max) {
+
+        font-family: $font-family-regular;
+    }
+
+    &, &:active, &.active { 
+
+        &:focus, &.focus {
+            
+            @include tab-focus;
+            outline-offset: -3px;
+        }
+    }
+    &:hover, &:focus, &.focus {
+
+        color: $btn-default-color;
+        text-decoration: none;
+    }
+    &:active, &.active {
+
+        outline: 0;
+        background-image: none;
+        @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+    }
+    &.disabled, &[disabled], fieldset[disabled] & { 
+
+        cursor: $cursor-disabled;
+        @include opacity(.65);
+        @include box-shadow(none);
+    }
+    &.active-loading {
+
+        color: rgba($white-color, 0) !important;
+    }
+}
+
+// btn anchor style
+
+a.btn {
+
+    &.disabled, fieldset[disabled] & {
+        
+        &, &:hover, &:focus, &.focus, &:active, &.active {
+            
+            background-color: $label-dark-color;
+            border-color: $label-dark-color;
+            border-bottom-color: darken($label-dark-color, 12%);
+            cursor: not-allowed;
+        } 
+    }
+}
+
+// btn center style
+
+.btn-center {
+
+    transform: translateX(-50%);
+    position: relative;
+    left: 50%;
+}
+
+// btn block style
+
+.btn-block {
+
+    display: block;
+    width: 100%;
+}
+.btn-block + .btn-block {
+    
+    margin-top: 5px;
+}
+
+// btn overrride style
+
+input[type="submit"], input[type="reset"], input[type="button"] {
+  
+    &.btn-block {
+        
+        width: 100%;
+    }
+}
+
+// btn round style
+
+.btn-round {
+
+    border-radius: $btn-round-radius;
+
+    @media (max-width: $screen-xs-max) { 
+
+        border-radius: $btn-round-lg-radius !important;
+    }
+}
+.btn-sm.btn-round {
+
+    border-radius: $btn-round-sm-radius;
+}
+.btn-lg.btn-round {
+
+    border-radius: $btn-round-lg-radius;
+}
+
+// mobile media style
+
+@media (max-width: $screen-xs-max) { 
+
+    .btn { white-space: normal; }
+}
+
+// btn size style
+
+.btn-lg {
+
+    min-width: 200px;
+    @include button-size($btn-large-padding-y, $btn-large-padding-x, $btn-large-font-size, $btn-large-line-height, $btn-border-radius-base);
+}
+.btn-sm {
+
+    @include button-size($btn-small-padding-y, $btn-small-padding-x, $btn-small-font-size, $btn-small-line-height, $btn-border-radius-base);
+}
+.btn-xs {
+
+    @include button-size($btn-xs-padding-y, $btn-xs-padding-x, $btn-small-font-size, $btn-small-line-height, $btn-border-radius-base);
+}
+.btn-wide {
+
+    min-width: 240px;
+}
+
+// btn variant style
+
+.btn-default {
+    
+    @include button-color-variant($btn-default-color, $btn-default-bg, $btn-default-border, $btn-default-color, $btn-default-bg, $btn-default-border);
+}
+.btn-primary {
+    
+    @include button-color-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border, $btn-primary-hover-color, $btn-primary-hover-bg, $btn-primary-hover-border);
+}
+.btn-secondary {
+
+    @include button-color-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border, $btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+}
+.btn-success {
+    
+    @include button-color-variant($btn-success-color, $btn-success-bg, $btn-success-bg, $btn-success-color, $btn-success-bg, $btn-success-bg);
+}
+.btn-info {
+    
+    @include button-color-variant($btn-info-color, $btn-info-bg, $btn-info-bg, $btn-info-color, $btn-info-bg, $btn-info-bg);
+}
+.btn-warning {
+    
+    @include button-color-variant($btn-warning-color, $btn-warning-bg, $btn-warning-bg, $btn-warning-color, $btn-warning-bg, $btn-warning-bg);
+}
+.btn-danger {
+    
+    @include button-color-variant($btn-danger-color, $btn-danger-bg, $btn-danger-bg, $btn-danger-color, $btn-danger-bg, $btn-danger-bg);
+}
+.btn-facebook {
+    
+    @include button-color-variant($btn-default-color, $facebook-color, $facebook-color, $btn-default-color, $facebook-color, $facebook-color);
+}
+.btn-google {
+    
+    @include button-color-variant($btn-default-color, $google-color, $google-color, $btn-default-color, $google-color, $google-color);
+}
+.btn-twitter {
+    
+    @include button-color-variant($btn-default-color, $twitter-color, $twitter-color, $btn-default-color, $twitter-color, $twitter-color);
+}
+.btn-line {
+    
+    @include button-color-variant($btn-default-color, $line-color, $line-color, $btn-default-color, $line-color, $line-color);
+}
+
+// btn ghost style
+
+.btn-ghost-default {
+
+    @include button-ghost-variant($btn-default-bg, $white-color, transparent, $btn-default-ghost-bg-hover, $btn-default-border, $btn-default-ghost-border-hover);
+}
+.btn-ghost-primary {
+
+    @include button-ghost-variant($btn-primary-bg, $white-color, transparent, $btn-primary-ghost-bg-hover, $btn-primary-border, $btn-primary-ghost-border-hover);
+}
+.btn-ghost-secondary {
+
+    @include button-ghost-variant($btn-secondary-bg, $white-color, transparent, $btn-secondary-ghost-bg-hover, $btn-secondary-border, $btn-secondary-ghost-border-hover);
+}
+.btn-ghost-success {
+
+    @include button-ghost-variant($btn-success-bg, $white-color, transparent, $btn-success-ghost-bg-hover, $btn-success-bg, $btn-success-ghost-border-hover);
+}
+.btn-ghost-info{
+
+    @include button-ghost-variant($btn-info-bg, $white-color, transparent, $btn-info-ghost-bg-hover, $btn-info-bg, $btn-info-ghost-border-hover);
+}
+.btn-ghost-warning {
+
+    @include button-ghost-variant($btn-warning-bg, $white-color, transparent, $btn-warning-ghost-bg-hover, $btn-warning-bg, $btn-warning-ghost-border-hover);
+}
+.btn-ghost-danger {
+
+    @include button-ghost-variant($btn-danger-bg, $white-color, transparent, $btn-danger-ghost-bg-hover, $btn-danger-bg, $btn-danger-ghost-border-hover);
+}
+.btn-ghost-white {
+
+    @include button-ghost-variant($white-color, $theme-feature-color, transparent, $white-color, $white-color, $white-color);
+}
+.btn-ghost-control {
+
+    @include button-ghost-variant($btn-control-color, $btn-control-color, $btn-control-bg, $btn-control-ghost-bg-hover, $btn-control-border, $btn-control-ghost-border-hover);
+}
+
+// btn inverted style
+
+.btn-inverted-primary {
+
+    @include button-ghost-variant($btn-primary-color, $btn-primary-bg, $btn-primary-bg, transparent, $btn-primary-bg, $btn-primary-bg);
+}
+
+// btn promo style
+
+.btn-promo-primary {
+
+    @include button-ghost-variant($btn-default-bg, $btn-default-color, $btn-default-color, transparent, transparent, $btn-default-color);
+}
+

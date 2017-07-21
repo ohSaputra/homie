@@ -1,0 +1,74 @@
+// SCSS File
+// layout-footer.scss
+// Modified April 24, 2017
+
+
+// layout footer style
+
+.layout-footer { 
+ 	
+    width: 100%;
+    background-color: $theme-color;
+    color: $white-color;
+    font-size: 90%;
+
+    @media (max-width: $screen-md-max) { 
+        
+    	text-align: center;
+    }
+
+    .container {
+
+		padding-top: 24px;
+		padding-bottom: 24px;
+	}
+    .foot {
+
+    	.link {
+
+    		color: $link-panel-color;
+    	}
+    }
+    .foot-top {
+
+    	padding-top: 14px;
+    	padding-bottom: 48px;
+
+    	@media (max-width: $screen-md-max) {
+
+    		padding-bottom: 24px;
+    	}
+    }
+    .foot-bottom {
+
+    	padding-top: 18px;
+    	border-top: 1px solid rgba($white-color, 0.2);
+    }
+    .pull-left, .pull-right {
+
+    	padding: 6px 0;
+
+        @media (max-width: $screen-md-max) { 
+
+            text-align: center;
+            float: none !important;
+        }
+    }
+    .foot-menu {
+
+    	@media (max-width: $screen-md-max) {
+
+    		display: none;
+    	}
+    }
+    .logo {
+
+    	float: right;
+
+    	@media (max-width: $screen-md-max) {
+
+    		float: none;
+    	}
+    }
+}
+

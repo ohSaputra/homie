@@ -1,56 +1,73 @@
 <?php
 /**
- * The header for our theme
+ * The template for displaying the header
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
+ * Displays all of the head element and everything up until the "layout-content" div.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package homie
+ * @package WordPress
+ * @subpackage Compare_Master
+ * @since Compare Master 1.0
  */
-
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html lang="<?php $language = explode('-', get_bloginfo('language')); echo $language[0]; ?>"<?php if(is_rtl()) : echo ' dir="rtl"'; endif; ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
 
-	<?php wp_head(); ?>
+<meta charset="utf-8">
+<title><?php get_template_part('includes/header/meta', 'title'); ?></title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<?php get_template_part('includes/header/favicon', 'windows'); ?>
+
+<?php get_template_part('includes/header/meta', 'robots'); ?>
+<?php get_template_part('includes/header/meta', 'description'); ?>
+<?php get_template_part('includes/header/meta', 'keywords'); ?>
+<?php get_template_part('includes/header/meta', 'copyright'); ?>
+<?php get_template_part('includes/header/meta', 'author'); ?>
+
+<?php get_template_part('includes/header/meta', 'twitter'); ?>
+<?php get_template_part('includes/header/meta', 'facebook'); ?>
+<?php get_template_part('includes/header/meta', 'itemprop'); ?>
+
+<?php get_template_part('includes/header/verification', 'google'); ?>
+<?php get_template_part('includes/header/verification', 'bing'); ?>
+<?php get_template_part('includes/header/verification', 'alexa'); ?>
+
+<?php get_template_part('includes/header/favicon', ''); ?>
+<?php get_template_part('includes/header/favicon', 'apple'); ?>
+<?php get_template_part('includes/header/favicon', 'android'); ?>
+
+<?php get_template_part('includes/header/meta', 'google'); ?>
+
+<?php get_template_part('includes/header/link', 'pingback'); ?>
+<?php get_template_part('includes/header/link', 'canonical'); ?>
+<?php get_template_part('includes/header/link', ''); ?>
+
+<?php wp_head(); ?>
+
 </head>
 
-<body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'homie' ); ?></a>
+<body>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
+    <!-- layout starts -->
+        <div class="layout">
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
+            <!-- header starts -->
+                <header class="layout-header" role="banner">
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'homie' ); ?></button>
-			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				) );
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+                    <?php get_template_part('includes/layout/head', ''); ?>
 
-	<div id="content" class="site-content">
+                    <!-- toggle starts -->
+                        <div class="toggle-menu">
+                            <div class="container">
+
+                                <?php get_template_part('includes/menu/submenu', ''); ?>
+
+                            </div>
+                        </div>
+                    <!-- toggle ends -->
+
+                </header>
+            <!-- header ends -->

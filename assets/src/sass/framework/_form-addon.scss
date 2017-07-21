@@ -1,0 +1,38 @@
+// SCSS File
+// form-addons.scss
+// Modified April 24, 2017
+
+
+// form addon style 
+
+.input-group-addon {
+
+    border-color: $input-border;
+    border-bottom-color: $input-light-border;
+    padding: $padding-base-vertical ($padding-base-horizontal / 2);
+    text-align: left;
+
+    &.select-addon {
+
+        padding: 0;
+        
+        select {
+
+            height: 100%;
+            padding: 0 28px 0 14px;
+            border: none;
+            border-radius: $input-border-radius;
+            background-color: $input-group-addon-bg;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3IDEyIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzNjNGQ2Njt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93LXNlbGVjdC1ib3gtN3gxMjwvdGl0bGU+PHBhdGggaWQ9ImFycm93IiBjbGFzcz0iY2xzLTEiIGQ9Ik0wLDRMMy41LDAsNyw0SDBaTTcsOEwzLjUsMTIsMCw4SDdaIi8+PC9zdmc+');
+            background-repeat: no-repeat;
+            background-position: right 0.8rem center;
+            background-size: 7px 13px;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            outline: none;
+        }
+       
+    }
+}
+

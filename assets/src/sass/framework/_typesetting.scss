@@ -1,0 +1,306 @@
+// SCSS File
+// typesetting.scss
+// Modified April 24, 2017
+
+
+// typesetting style
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl {
+
+	font-weight: 300;
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+
+	font-family: $font-family-serif;
+}
+h1, .h1, h2, .h2, .lead {
+  	
+  	margin-top: $headings-margin-top;
+	margin-bottom: $headings-margin-bottom;
+}
+h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  	
+  	margin-top: $headings-margin-top;
+	margin-bottom: $title-margin-bottom;
+}
+h4, .h4, h5, .h5, h6, .h6 {
+
+	margin-top: $title-margin-top;
+}
+p, .paragraph {
+
+	margin-bottom: $paragraph-margin-bottom;
+	font-size: $font-size-base;
+	color: $text-color;
+	
+	&.lead {
+
+		margin-bottom: $lead-margin-bottom;
+		line-height: 1.5;
+		font-size: $lead-font-size;
+		color: $lead-color;
+	}
+	> .dark {
+
+		font-weight: 500;
+		color: darken($text-color, 60%);
+	}
+	> a, > a:hover, > a:focus {
+
+		color: $link-color;
+	}
+}
+
+// list style 
+
+ul, ol {
+
+	margin-bottom: $list-margin-bottom;
+	
+	li {
+		
+		margin-bottom: 0.588rem;
+
+        > ol, > ul {
+
+            margin-top: 0.588rem;
+            margin-bottom: 0;
+        }
+	}
+}
+
+// anchor style 
+
+a {
+
+	cursor: pointer;
+	color: inherit;
+	
+	&, &:hover, &:active, &:focus {
+
+		outline: 0;
+		color: inherit;
+	}
+	&::-moz-focus-inner {
+		
+		border: 0;
+	}
+	&[href^=tel] {
+
+		text-decoration: none;
+		color: inherit;
+	}
+	&:not([href]) {
+
+		color: inherit;
+	}
+}
+
+// link style
+
+.link {
+
+    display: inline-block;
+    cursor: pointer;
+    color: $link-color;
+    
+	&:not([href]) {
+
+		color: $link-color;
+	}
+	&:hover, a:not([href]):hover {
+
+	    text-decoration: underline;
+	    color: $link-hover-color;
+	}
+}
+
+// anchor style
+
+.anchor {
+
+	cursor: pointer;
+	color: inherit;
+}
+
+// anchor tag style
+
+.anchor-tag {
+
+	font-size: 0;
+	line-height: 0;
+}
+
+// decoration style
+
+.decoration {
+
+	text-decoration: underline;
+
+	&:not([href]) {
+
+		text-decoration: underline;
+	}
+	&:hover, a:not([href]):hover {
+		
+		text-decoration: none;
+	}
+}
+
+// divider style
+
+hr {
+
+	margin-bottom: $hr-margin-bottom;
+
+	&.tall {
+
+		margin-top: $hr-margin-top;
+		margin-bottom: $hr-margin-bottom;
+	}
+	&.dashed {
+
+		border-style: dashed;
+	}
+	&.dotted {
+
+		border-style: dotted;
+	}
+	&.separator {
+
+	    width: 80px;
+	    margin-top: 34px;
+	    margin-bottom: 44px;
+	}
+}
+
+// divider style
+
+.divider {
+
+	margin: 18px 0 34px;
+	position: relative;
+	text-align: center;
+	font-size: 80%;
+	
+	> span {
+
+		padding: 4px 8px;
+		position: relative;
+		text-transform: uppercase;
+		display: inline-bock;
+		z-index: 2;
+		top: 9px;
+	}
+	&:before, &:after {
+
+		height: 1px;
+		width: 46%;
+		background-color: $border-color;
+		position: absolute;
+		z-index: 1;
+		top: 18px;
+		content: '';
+	}
+	&:before {
+
+		left: 0;
+	}
+	&:after {
+
+		right: 0;
+	}
+	&.inverted {
+
+        color: rgba($white-color, 0.8);
+
+        &:before, &:after {
+
+            background-color: rgba($white-color, 0.4);
+        }
+    }
+}
+
+// definition style
+
+dl {
+
+	> dt {
+
+		font-weight: 400;
+		color: $title-color;
+	}
+	> dl {
+
+		color: $label-dark-color;
+	}
+}
+
+// blockquote style 
+
+.blockquote {
+
+	margin-bottom: $headings-margin-bottom;
+	font-family: $font-family-serif;
+	border: none;
+
+	p {
+
+		margin-bottom: $headings-margin-bottom;
+		font-style: normal;
+		font-size: inherit;
+		color: $blockquote-color;
+	}
+	cite {
+
+		margin-bottom: 10px;
+		font-size: 70%;
+		text-align: right;
+		font-style: normal;
+		color: $label-dark-color;
+		display: block;
+	}
+	strong {
+
+		font-weight: normal;
+	}
+	.icon {
+
+		margin-top: 8px;
+		margin-right: 20px;
+		float: left;
+	}
+}
+
+// mark style
+
+mark, .mark {
+
+	background-color: rgba($theme-twin-color, 0.3);
+}
+
+// address style
+
+.address {
+
+	padding-bottom: 34px;
+
+	address {
+
+		margin-bottom: 0;
+		color: $label-color;
+	}
+}
+
+// word break style
+
+.word-break {
+
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-ms-word-break: break-all;
+	word-break: break-all;
+	word-break: break-word;
+	hyphens: auto;
+}
+

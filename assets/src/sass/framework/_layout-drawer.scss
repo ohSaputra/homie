@@ -1,0 +1,68 @@
+// SCSS File
+// layout-drawer.scss
+// Modified April 24, 2017
+
+
+// drawer style
+
+.layout-drawer {
+
+    color: $drawer-active-color;
+
+    h5 {
+
+        margin: 0 2px;
+        font-size: 100%;
+        color: $title-color;
+    }
+    .head {
+
+        height: 80px;
+        background-color: $drawer-header-color;
+        border-bottom: 1px solid $drawer-border-color;
+        position: relative;
+        z-index: 2;
+    }
+    .body {
+
+        padding: 24px;
+        position: relative;
+        z-index: 1;
+    }
+    .btn {
+
+        margin: 34px 0;
+
+        &:first-child {
+
+            margin: -6px 0 24px !important;
+        }
+
+        @media (max-width: $screen-xs-max) { 
+
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+// drawer close style
+
+.drawer-close {
+
+    width: 42px;
+    height: 42px;
+    margin-top: -21px;
+    padding-top: 6px;
+    text-align: center;
+    position: absolute;
+    cursor: pointer;
+    left: 8px;
+    top: 50%;
+
+    &:hover, &:focus {
+
+        color: $drawer-idle-color;
+    }
+}
+

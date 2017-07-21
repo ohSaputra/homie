@@ -1,0 +1,197 @@
+// SCSS File
+// layout.scss
+// Modified April 24, 2017
+
+
+// core style
+
+html, body { min-height: 100vh; }
+body { -webkit-font-smoothing: subpixel-antialiased; -webkit-overflow-scrolling: touch; overflow-x: hidden; user-select: text; }
+
+// layout style
+
+.layout { 
+    
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-color: $theme-body-color;
+    position: relative;
+    z-index: 0;
+}
+
+// layout header style
+
+.layout-header {
+
+    width: 100%;
+    height: 96px;
+    @include layout-transform(0);
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    @media (max-width: $screen-md-max) { 
+        
+        min-height: 96px;
+    }
+}
+
+// layout content style
+
+.layout-content {
+
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    padding-top: 96px;
+    @include layout-transform(0);
+    position: relative;
+    z-index: 1;
+
+    @media (max-width: $screen-md-max) { 
+
+        padding-top: 96px;
+    }
+}
+
+// layout drawer style
+
+.layout-drawer {
+
+    width: 0px;
+    height: 100%;
+    max-height: 100%;
+    @include layout-transform(calc(100% + 240px));
+    background-color: $drawer-color;
+    box-shadow: $drawer-shadow;
+    overflow: visible;
+    overflow-y: auto;
+    position: absolute;
+    visibility: hidden;
+    z-index: 6;
+    top: 0;
+    bottom: 0;
+}
+
+// layout backdrop style
+
+.layout-backdrop {
+
+    width: 100%;
+    height: 100%;
+    transition: opacity .2s $bezier-curve;
+    background-color: rgba(0,0,0, 0.8);
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+// drawer visible style
+
+.drawer-visible {
+
+    .layout-drawer {
+        
+        width: calc(100% - 240px);
+        transform: translateX(240px);
+        visibility: visible;
+        
+        @media (max-width: $screen-xs-max) { 
+
+            width: 100%;
+            transform: translateX(0);
+        }
+    }
+    .layout-content, .layout-header {
+        
+        transform: translateX(calc(-100% + 240px));
+
+        @media (max-width: $screen-xs-max) { 
+
+            transform: translateX(calc(-100%));
+        }
+    }
+    .layout-header {
+
+        .drawer-button {
+            
+            opacity: 0;
+        }
+    }
+    .layout-backdrop {
+
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+// drawer animating style
+
+.animating {
+
+    &.move-left { 
+
+        .layout-drawer {
+            
+            width: calc(100% - 240px);
+            transform: translateX(240px);
+            visibility: visible;
+
+            @media (max-width: $screen-xs-max) { 
+
+                width: 100%;
+                transform: translateX(0);
+            }
+        }
+        .layout-content, .layout-header {
+            
+            transform: translateX(calc(-100% + 240px));
+
+            @media (max-width: $screen-xs-max) { 
+
+                transform: translateX(calc(-100%));
+            }
+        }
+        .layout-header {
+
+            .drawer-button {
+                
+                opacity: 0;
+            }
+        }
+        .layout-backdrop {
+
+            transition-delay: 0.2s;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    &.move-right { 
+        
+        .layout-drawer {
+
+            width: calc(100% - 240px);
+            transform: translateX(calc(100% + 240px));
+            visibility: visible;
+
+            @media (max-width: $screen-xs-max) { 
+
+                width: 100%;
+                transform: translateX(calc(100%));
+            }
+        }
+        .layout-content, .layout-header {
+
+            transform: translateX(0);
+        }
+    }
+}
+

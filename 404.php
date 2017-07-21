@@ -2,59 +2,69 @@
 /**
  * The template for displaying 404 pages (not found)
  *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
+ * @link http://codex.wordpress.org/Template_Hierarchy
  *
- * @package homie
+ * @package WordPress
+ * @subpackage Compare_Master
+ * @since Compare Master 1.0
  */
 
-get_header(); ?>
+    // Check if we will use a custom error page
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+    $id = get_theme_option('system_options', 'custom_error_page');
+    $layout = get_post_meta($id, 'page_layout', true);
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'homie' ); ?></h1>
-				</header><!-- .page-header -->
+?>
+<?php get_header(); ?>
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'homie' ); ?></p>
+            <!-- content starts -->
+                <div class="layout-content">
 
-					<?php
-						get_search_form();
+                    <?php get_template_part('includes/menu/breadcrumb', ''); ?>
 
-						the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+                    <!-- main starts -->
+                        <main class="main" role="main">
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'homie' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
+                        <?php if ($layout == 'custom') : ?>
 
-					<?php
+                            <?php get_template_part('includes/layout/404', ''); ?>
 
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'homie' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+                        <?php elseif ($layout == 'full') : ?>
 
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
+                            <!-- article starts -->
+                                <article class="article">
+                                    <div class="content">
 
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
+                                        <?php get_template_part('includes/layout/404', ''); ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+                                    </div>
+                                </article>
+                            <!-- article ends -->
 
-<?php
-get_footer();
+                        <?php else : ?>
+
+                            <!-- article starts -->
+                                <article class="article article-sidebar">
+                                    <div class="content container">
+                                        <div class="story">
+                                            <?php get_template_part('includes/layout/404', ''); ?>
+                                        </div>
+
+                                        <aside class="sidebar sidebar-sticky">
+                                            <?php get_sidebar(); ?>
+                                        </aside>
+                                    </div>
+                                </article>
+                            <!-- article ends -->
+
+                        <?php endif; ?>
+
+                        </main>
+                    <!-- main ends -->
+
+                    <?php get_template_part('includes/layout/footer', ''); ?>
+
+                </div>
+            <!-- content ends -->
+
+<?php get_footer(); ?>

@@ -1,0 +1,65 @@
+// SCSS File
+// breadcrumb.scss
+// Modified March 24, 2016
+
+
+// breadcrumb style
+
+.breadcrumb {
+
+    margin: 0 auto;
+    padding: 18px 0 21px;
+    background-color: $breadcrumb-bg-color;
+
+    ol {
+
+        margin: 0 auto;
+        padding: 0 ($grid-gutter-width / 2);
+        list-style: none;
+        font-size: 90%;
+
+        white-space: nowrap;
+        overflow: hidden;
+
+        @media (min-width: $screen-sm-min) {
+            
+            width: $container-sm;
+        }
+        @media (min-width: $screen-md-min) {
+            
+            width: $container-md;
+        }
+        @media (min-width: $screen-lg-min) {
+            
+            width: $container-lg;
+        }
+
+        li {
+
+            margin: 0;
+            display: inline-block;
+
+            & + li:before {
+
+                content: "#{$breadcrumb-separator}\00a0";
+                padding: 0 5px;
+                color: $breadcrumb-divider-color;
+            }
+            a {
+
+                color: $breadcrumb-link-color;
+            }
+
+            &:last-child {
+                
+                a, a:hover, a.hover{
+
+                    text-decoration: none;
+                    color: $breadcrumb-link-color;
+                    cursor: default;
+                }
+            }
+        }
+    }
+}
+

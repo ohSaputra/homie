@@ -1,0 +1,269 @@
+// SCSS File
+// form-feedback.scss
+// Modified April 24, 2017
+
+
+// feedback style
+
+.form-feedback {
+
+    padding: 10px;
+    padding-left: 38px;
+    margin-top: 2px;
+    background-color: $white-color;
+    border: 1px solid $input-border-focus;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0, 0.3);
+    color: $title-color;
+    text-align: left;
+    font-size: 90%;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: calc(100% - 20px);
+    display: none;
+
+    &:before {
+
+        margin: -8px 0;
+        border: 8px solid transparent;
+        border-bottom-width: 8px;
+        border-top-width: 0;
+        border-bottom-color: $white-color;
+        border-top-style: dashed;
+        pointer-events: none;
+        position: absolute;
+        z-index: 4;
+        top: 0;
+        left: 15px;
+        content: '';
+    }
+    &:after {
+
+        margin: -9px 0;
+        border: solid transparent 9px;
+        border-bottom-width: 9px;
+        border-top-width: 0;
+        border-bottom-color: inherit;
+        border-top-style: dashed;
+        pointer-events: none;
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        left: 14px;
+        content: '';
+    }
+    > .icon {
+
+        position: absolute;
+        top: calc(50% - 8px);
+        left: 14px;
+    }
+    > .i-action-alert-circle-solid {
+
+        color: $negative-color;
+    }
+    > .i-action-info-circle-solid {
+
+        color: $info-color;
+    }
+    > .i-action-tick-circle-solid {
+
+        color: $positive-color;
+    }
+}
+
+// form control style 
+
+.form-control {
+
+    &.warning:not(:focus) {
+
+        border-color: $state-warning;
+        background-color: $state-warning-input-bg;
+    }
+    &.error:not(:focus) {
+
+        border-color: $state-danger;
+        color: darken($state-danger, 10%);
+    }
+    &.success:not(:focus) {
+
+        border-color: $state-success;
+        color: darken($state-success, 10%);
+    }
+}
+
+// form note style 
+
+.form-note {
+
+    margin: 8px 0;
+    font-size: 80%;
+    color: $label-dark-color;
+    display: block;
+
+    &.error {
+
+        margin-bottom: -4px;
+        font-size: 90%;
+        color: darken($state-danger, 10%);
+    }
+    &.warning {
+
+        margin-bottom: -4px;
+        font-size: 90%;
+        color: $state-warning;
+    }
+}
+
+// form error style
+
+.form-error {
+
+    > label, .label {
+
+        color: darken($state-danger, 10%) !important;
+    }
+    .form-control:not(.range):not(:focus) {
+
+        background-color: $state-danger-input-bg;
+        border-color: $state-danger;
+        color: darken($state-danger, 10%);
+
+        &::placeholder {
+            
+            color: $negative-color;
+        }
+    }
+    .input-group-addon {
+
+        background-color: darken($state-danger-input-bg, 4%);
+        border-color: $state-danger;
+        color: darken($state-danger, 10%);
+    }
+}
+
+// form error style
+
+.form-success {
+
+    .form-control:not(.range):not(:focus) {
+
+        background-color: $state-success-input-bg;
+        border-color: $state-success;
+        color: darken($state-success, 10%);
+
+        &::placeholder {
+            
+            color: $positive-color;
+        }
+    }
+    .input-group-addon {
+
+        background-color: darken($state-success-input-bg, 4%);
+        border-color: $state-success;
+        color: darken($state-success, 10%);
+    }
+}
+
+// form focus style
+
+.form-error, .form-info {
+
+    .form-control {
+
+        &:focus ~ .form-feedback {
+
+            display: block;
+        }
+    }
+    &.focus-out {
+
+        .form-control {
+
+            &:focus ~ .form-feedback {
+
+                display: none;
+            }
+        }
+    }
+}
+
+// form captcha style
+
+.form-captcha {
+    
+    position: absolute;
+    right: -5000em;
+}
+
+// loading style
+
+.loading {
+
+    width: 80%;
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    right: 10%;
+    left: 10%;
+
+    > span {
+
+        width: 10px;
+        height: 10px;
+        margin: 0 2px;
+        margin-top: -4px;
+        vertical-align: middle;
+        border-radius: 100%;
+        background-color: $white-color;
+        animation: loading 0.8s linear infinite alternate;
+        display: inline-block;
+        position: relative;
+        line-height: 0;
+        font-size: 0;
+
+        .btn-sm & {
+
+            width: 8px;
+            height: 8px;
+        }
+        
+        &:nth-child(1) {
+
+            animation-delay: -0.8s;
+        }
+        &:nth-child(2) {
+
+            animation-delay: -0.53333s;
+        }
+        &:nth-child(3) {
+
+            animation-delay: -0.26666s;
+        }
+    }
+}
+
+// loader style
+
+.loader {
+
+    text-align: center;
+
+    > span {
+
+        margin-bottom: 4px;
+        display: block;
+    }
+    .loading {
+
+        > span {
+
+            background-color: $theme-fold-color;
+        }
+    }
+}
+

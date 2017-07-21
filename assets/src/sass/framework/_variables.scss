@@ -1,0 +1,347 @@
+// SCSS File
+// variables.scss
+// Modified April 24, 2017
+
+
+// layout color codes
+
+$theme-body-color:					#FFFFFF !default;
+$theme-section-color:				#F3F7FA !default;
+$theme-panel-color:       			#ECEFF4 !default;
+$theme-panel-light-color:			#F7F9FB !default;
+$theme-highlight-color:				#F5F6F7 !default;
+$theme-icon-color:          		#8393A9 !default;
+$theme-fold-color:               	#8393A9 !default;
+
+$drawer-color:              		#F5F6F7 !default;
+$drawer-header-color:              	#FFFFFF !default;
+$drawer-menu-color:              	#FFFFFF !default;
+$drawer-hover-color: 				#FBFBFC !default;
+$drawer-shadow:						inset 3px 0 3px -3px rgba(0,0,0, 0.24) !default;
+$drawer-idle-color:         		#54657E !default;
+$drawer-active-color:       		#667B99 !default;
+$drawer-border-color:				#CAD3E1 !default;
+$drawer-divider-color:      		#DAE1EC !default;
+
+$border-color:              		#CAD3E1 !default;
+$border-dark-color:               	#BAC7DA !default;
+$divider-color:             		#ECEFF4 !default;
+$location-color:					#F5F6F7 !default;
+$section-color:						#ECEFF4 !default;
+$shadow-color:                		rgba(#53657F, 0.2) !default;
+$hr-border-color:					$border-color;
+
+$white-color:               		#FFFFFF !default;
+$black-color:               		#000000 !default;
+$title-color:               		#003366 !default;
+$lead-color:            			#003366 !default;
+$text-color:                		#53657F !default;
+$label-color:               		#ADB9CB !default;
+$label-dark-color:        			#8393A9 !default;
+$label-light-color:        			#CAD3E1 !default;
+$anchor-color:              		#41739F !default;
+$anchor-hover-color:        		#588CBB !default;
+$positive-color:            		#6DC42C !default;
+$neutral-color:             		#FAA20E !default;
+$negative-color:            		#E64040 !default;
+$info-color:						#3498DB !default;
+
+// theme color codes
+
+$theme-color: 						#8393A9 !default;
+$theme-dark-color: 					#53657F !default;
+$theme-light-color: 				#ADB9CB !default;
+$theme-feature-color: 				#00ACEE !default;
+$theme-overlay-color: 				mix($theme-feature-color, $black-color, 82%) !default;
+$theme-twin-color:            		#9DE4FF !default;
+$theme-action-color: 				#003366 !default;
+
+// content color codes
+
+$breadcrumb-bg-color:				#F5F6F7 !default;
+$breadcrumb-divider-color:			#CAD3E1 !default;
+$breadcrumb-link-color:				#53657F !default;
+
+$link-color:						#00ACEE !default;
+$link-hover-color:					#00ACEE !default;
+$link-panel-color:					#9DE4FF !default;
+$link-panel-hover-color:			#9DE4FF !default;
+$link-drawer-color:					#53657F !default;
+$link-drawer-hover-color:			#00ACEE !default;
+$theme-badge-color:            		#65B3EF !default;
+
+$theme-promo-color:            		#CD201F !default;
+
+// widget color codes
+
+$widget-promo-color:				#53657F !default;
+
+// display settings
+
+$display-padding:					34px !default;
+$display-padding-top:				38px !default;
+$display-padding-bottom:			48px !default;
+
+// bootstrap overrides
+
+$body-bg: 							$theme-section-color;
+$body-color:                		$text-color;
+
+$font-family-base:          		'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-light:       			'opensans-light';
+$font-family-regular:       		'opensans-regular';
+$font-family-semibold:      		'opensans-semibold';
+$font-family-script:       			'hanzipen';
+$font-family-serif:       			'lustria';
+
+$font-size-base:            		18px;
+$line-height-base:          		1.6;
+$border-width:              		rem-border-unit($font-family-base);
+$line-height-computed:				floor(($font-size-base * 1.3));
+
+$font-size-h1:              		40px;
+$font-size-h2:              		30px;
+$font-size-h3:              		26px;
+$font-size-h4:              		24px;
+$font-size-h5:              		22px;
+$font-size-h6:              		18px;
+$font-size-p:              			18px;
+$font-size-figcaption:              15px;
+
+$lead-font-size:            		24px;
+$lead-font-weight:          		300;
+$lead-line-height:            		1.5;
+$lead-margin-bottom:				42px;
+
+$headings-font-family:      		inherit;
+$headings-color:            		$title-color;
+$headings-font-weight:      		400;
+$headings-line-height:      		1.3;
+$headings-margin-bottom:			24px;
+$headings-margin-top:				34px;
+$title-margin-top:					24px;
+$title-margin-bottom:				24px;
+$paragraph-margin-bottom:			24px;
+$list-margin-bottom:				34px;
+$button-margin-bottom:				34px;
+$widget-margin-bottom:				24px;
+$figure-margin-top:					48px;
+$figure-margin-bottom:				24px;
+
+$hr-border:                 		$border-color;
+$hr-margin-top:						34px;
+$hr-margin-bottom:					48px;
+
+$brand-primary:						$theme-color;
+$brand-success:						$positive-color;
+$brand-info:						$info-color;
+$brand-warning:						$neutral-color;
+$brand-danger:						$negative-color;
+
+$positive-color:            		#80B200 !default;
+$neutral-color:             		#FAA20E !default;
+$negative-color:            		#DE3314 !default;
+$info-color:						#00ACEE !default;
+
+$component-active-bg: 				$title-color;
+$blockquote-small-color: 			$label-dark-color;
+$blockquote-border-color:			$theme-panel-color;
+$blockquote-color: 					$title-color;
+$blockquote-font-size:				24px;
+
+$table-border-color:				$border-color;
+$table-bg-accent: 					$theme-highlight-color;
+$table-cell-padding:				10px;
+
+$nav-link-hover-bg:					$theme-highlight-color;
+
+$pre-color:							$text-color;
+$pre-bg:							$theme-panel-light-color;
+$pre-border-color:					$divider-color;
+
+// social media
+
+$facebook-color:					#3B5998 !default;
+$twitter-color:						#53ACED !default;
+$google-color:						#DD4B39 !default;
+$linkedin-color:					#007BB6 !default;
+$instagram-color:					#125688 !default;
+$pinterest-color:					#CB2027 !default;
+$line-color:						#00b900 !default;
+$whatsapp-color:					#25D366 !default;
+$rss-color:							#FFA500 !default;
+
+// grid overrides
+
+$grid-gutter-width:					30px;
+
+$modal-lg:							980px;
+$modal-md:							600px;
+$modal-sm:							380px;
+$modal-border-radius:				5px;
+
+$padding-base-vertical:				10px;
+$padding-base-horizontal:			24px;
+
+$screen-xxs:                  		360px;
+$screen-xs:							480px;
+$screen-sm:							768px;
+$screen-md:							992px;
+$screen-lg:							1200px;
+
+// transitions
+
+$bezier-curve:						cubic-bezier(0.4, 0, 0.2, 1);
+$transition-time:					0.2s;
+
+// content 
+
+$spacer:							14px !default;
+$spacer-double:						24px !default;
+$spacer-triple:						34px !default;
+$spacer-fourfold:					48px !default;
+$spacer-quintuple:					56px !default;
+$spacer-sextuple:					64px !default;
+
+$panel-radius:						6px !default;
+
+// forms overrides
+
+$input-padding-y:           		10px;
+$input-padding-x:           		14px;
+
+$input-padding-sm-y:           		5px;
+$input-padding-sm-x:           		8px;
+$input-padding-lg-y:           		12px;
+$input-padding-lg-x:           		10px;
+
+$input-color:						$text-color;
+$input-color-placeholder:			$label-dark-color;
+$input-bg-color:					#F8FAFD;
+$input-bg-disabled:					#F8FAFD;
+$input-color-disabled:				#8EA6D0;
+
+$input-border:						#ADB9CA;
+$input-dark-border:					#ADB9CA;
+$input-light-border:				#CAD3DF;
+$input-highlight:					#00ACEE;
+
+$input-border-focus:				$input-highlight;
+$input-color-focus:					darken($input-highlight, 6%) !default;
+
+$input-group-addon-bg:				$theme-panel-light-color;
+
+$range-track-color:					#DAE1EC !default;
+$range-progress-color:				#FF9800 !default;
+$range-track-focus-color:			#FF9800 !default;
+$range-progress-focus-color:		#FF9800 !default;
+$range-border-focus-color:			$input-highlight;
+
+$form-group-margin-bottom:			20px;
+
+// button overrides
+
+$btn-font-size:           			$font-size-base;
+$btn-large-font-size:				18px;
+$btn-small-font-size:				14px;
+
+$btn-font-weight:           		300;
+
+$btn-line-height:           		1.5;
+$btn-large-line-height:				1.5;
+$btn-small-line-height:				1.5;
+
+$btn-padding-y:           			10px;
+$btn-padding-x:           			24px;
+
+$btn-large-padding-y:				12px;
+$btn-large-padding-x:				48px;
+$btn-small-padding-y:				8px;
+$btn-small-padding-x:				18px;
+$btn-xs-padding-y:					6px;
+$btn-xs-padding-x:					14px;
+
+$btn-border-radius-base:			3px;
+$btn-border-radius-large:			$btn-border-radius-base;
+
+$btn-round-radius:       			26px;
+$btn-round-sm-radius:       		22px;
+$btn-round-lg-radius:       		32px;
+
+$btn-default-color:         		#FFFFFF;
+$btn-default-bg:            		$theme-feature-color;
+$btn-default-border:        		$btn-default-bg;
+$btn-default-ghost-bg-hover:		$btn-default-bg;
+$btn-default-ghost-border-hover:	darken($btn-default-border, 3%);
+
+$btn-primary-color:         		#FFFFFF;
+$btn-primary-bg:            		$theme-action-color;
+$btn-primary-border:        		$btn-primary-bg;
+$btn-primary-hover-color:         	$btn-primary-bg;
+$btn-primary-hover-bg:            	#FFFFFF;
+$btn-primary-hover-border:        	$btn-primary-bg;
+$btn-primary-ghost-bg-hover:		$btn-primary-bg;
+$btn-primary-ghost-border-hover:	darken($btn-primary-border, 3%);
+
+$btn-secondary-color:         		#FFFFFF;
+$btn-secondary-bg:            		$positive-color;
+$btn-secondary-border:        		$btn-secondary-bg;
+$btn-secondary-ghost-bg-hover:		$btn-secondary-bg;
+$btn-secondary-ghost-border-hover:	darken($btn-secondary-border, 3%);
+
+$btn-info-color:            		#FFFFFF;
+$btn-info-bg:               		$brand-info;
+$btn-info-border:           		$btn-info-bg;
+$btn-info-ghost-bg-hover:           darken($btn-info-bg, 3%);
+$btn-info-ghost-border-hover:		darken($btn-info-border, 3%);
+
+$btn-success-color:         		#FFFFFF;
+$btn-success-bg:            		$brand-success;
+$btn-success-border:        		$btn-success-bg;
+$btn-success-ghost-bg-hover:        darken($btn-success-bg, 3%);
+$btn-success-ghost-border-hover:	darken($btn-success-border, 3%);
+
+$btn-warning-color:         		#FFFFFF;
+$btn-warning-bg:            		$brand-warning;
+$btn-warning-border:        		$btn-warning-bg;
+$btn-warning-ghost-bg-hover:        darken($btn-warning-bg, 3%);
+$btn-warning-ghost-border-hover:	darken($btn-warning-border, 3%);
+
+$btn-danger-color:          		#FFFFFF;
+$btn-danger-bg:             		$brand-danger;
+$btn-danger-border:         		$btn-danger-bg;
+$btn-danger-ghost-bg-hover:         darken($btn-danger-bg, 3%);
+$btn-danger-ghost-border-hover:		darken($btn-danger-border, 3%);
+
+$btn-control-color:         		#8493A8;
+$btn-control-bg:            		#FFFFFF;
+$btn-control-border:        		#CAD3DF;
+$btn-control-ghost-bg-hover:        darken($btn-control-bg, 0);
+$btn-control-ghost-border-hover:	darken($btn-control-border, 10%);
+
+// state overrides
+
+$state-success:						#4CAF50 !default;
+$state-success-text:             	#FFFFFF !default;
+$state-success-bg:               	#4CAF50 !default;
+$state-success-border:           	#4CAF50 !default;
+$state-success-input-bg:            #F5FAF5 !default;
+
+$state-info:                  		#2196F3 !default;
+$state-info-text:                	#FFFFFF !default;
+$state-info-bg:                  	#2196F3 !default;
+$state-info-border:              	#2196F3 !default;
+$state-info-input-bg:               #F3F9FE !default;
+
+$state-warning:               		#FF9800 !default;
+$state-warning-text:             	#FFFFFF !default;
+$state-warning-bg:               	#FF9800 !default;
+$state-warning-border:           	#FF9800 !default;
+$state-warning-input-bg:            #FFF9F2 !default;
+
+$state-danger:   	             	#F44336 !default;
+$state-danger-text:              	#FFFFFF !default;
+$state-danger-bg:                	#F44336 !default;
+$state-danger-border:            	#F44336 !default;
+$state-danger-input-bg:             #FEF8F7 !default;
+

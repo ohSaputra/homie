@@ -1,0 +1,187 @@
+// SCSS File
+// forms.scss
+// Modified April 24, 2017
+
+
+// label style
+
+label, .label {
+
+    padding-bottom: 5px;
+    font-weight: normal;
+    display: inline-block;
+    color: $label-dark-color;
+}
+
+// form style 
+
+form {
+
+    text-align: left;
+
+    .legend {
+
+        margin-top: 0;
+        padding-top: 24px;
+    }
+}
+
+// fieldset style
+
+fieldset {
+
+    &.tab {
+
+        display: none;
+    }
+    &.active {
+
+        display: block;
+    }
+}
+
+// form group style 
+
+.form-group {
+
+    margin-bottom: 0;
+    padding-bottom: $form-group-margin-bottom;
+	position: relative;
+}
+
+// form control style 
+
+.form-control {
+    
+    padding: $input-padding-y $input-padding-x;
+    border-color: $input-dark-border;
+    border-right-color: $input-light-border;
+    border-bottom-color: $input-light-border;
+    background-color: $input-bg-color;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    font-size: 16px;
+    position: relative;
+    z-index: 1;
+    
+    &.inline {
+
+        width: auto;
+        display: inline-block;
+    }
+    &:focus {
+
+        border-color: $input-border-focus;
+		box-shadow: inset 0 0 4px rgba($input-border-focus, 0.3);
+        background-color: $input-bg-color;
+		color: $input-color-focus;
+	}
+    &.select:not(.multiple) {
+
+        padding-right: 44px;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3IDEyIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzNjNGQ2Njt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93LXNlbGVjdC1ib3gtN3gxMjwvdGl0bGU+PHBhdGggaWQ9ImFycm93IiBjbGFzcz0iY2xzLTEiIGQ9Ik0wLDRMMy41LDAsNyw0SDBaTTcsOEwzLjUsMTIsMCw4SDdaIi8+PC9zdmc+');
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 7px 13px;
+    }
+    &:disabled, &[readonly] {
+
+        color: $input-color-disabled;
+        -webkit-text-fill-color: rgba($input-color-disabled, 1);
+        -webkit-opacity: 1;
+    }
+    &.textarea {
+
+        resize: vertical;
+    }
+    &.plain, &.plain:focus {
+
+        background-color: $white-color;
+    }
+    &.input-sm {
+
+        height: auto;
+        padding: $input-padding-sm-y $input-padding-sm-x;
+        font-size: $font-size-small;
+        line-height: inherit;
+
+        @media (max-width: $screen-sm-min) {
+
+            height: $input-height-base;
+            padding: $input-padding-y $input-padding-x;
+            font-size: $font-size-base;
+            line-height: $line-height-base;
+        }
+    }
+    &.input-lg {
+
+        height: auto;
+        padding: $input-padding-lg-y $input-padding-lg-x;
+        font-size: $font-size-large;
+        border-radius: $input-border-radius;
+        line-height: inherit;
+    }
+}
+
+// form disabled style
+
+.form-disabled {
+
+    cursor: not-allowed;
+
+    .input-group-addon {
+        
+        color: $input-color-disabled;
+    }
+}
+
+// input inline
+
+.input-auto {
+
+    .auto {
+
+        width: auto;
+        display: inline-block;
+    }
+    .auto + .auto {
+
+        margin-left: 14px;
+    }
+}
+
+// form action style
+
+.form-action {
+
+    em {
+
+        font-size: 80%;
+        font-style: normal;
+        color: $label-dark-color;
+    }
+    button + button {
+
+        margin-left: 14px;
+    }
+    &.align-right {
+
+        em {
+
+            margin-top: 14px;
+            float: left;
+        }
+        button {
+
+            float: right;
+        }
+        button + button {
+
+            margin-left: 0;
+            margin-right: 14px;
+        }
+    }
+}
+

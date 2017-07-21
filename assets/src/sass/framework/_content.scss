@@ -1,0 +1,185 @@
+// SCSS File
+// content.scss
+// Modified April 24, 2017
+
+
+// elevator style 
+
+.elevator {
+
+    width: 56px;
+    height: 56px;
+    background-color: rgba(0,0,0, 0.6);
+    border-radius: 4px;
+    text-align: center;
+    position: fixed;
+    color: $white-color !important;
+    z-index: 4;
+    display: none;
+    right: 24px;
+    bottom: 24px;
+
+    &:hover, &:focus {
+
+        background-color: rgba(0,0,0, 0.8);
+        color: $white-color;
+    }
+    > .icon {
+
+        margin-top: 12px;
+    }
+}
+
+// tick list style
+
+.tick-list {
+
+    padding-left: 14px;
+    text-align: left;
+    list-style: none;
+
+    > li {
+
+        padding-left: 30px;
+        position: relative;
+
+        &:before {
+
+            width: 16px;
+            height: 16px;
+            font-size: 16px;
+            font-family: 'glyphs';
+            position: absolute;
+            top: 1px;
+            left: 0;
+            color: $state-success;
+            content: '\eA26';
+        }
+    }
+}
+
+// plus list style
+
+.plus-list {
+
+    > li {
+
+        &:before {
+
+            color: $state-success;
+            content: '\eA1B';
+        }
+    }
+}
+
+// minus list style
+
+.minus-list {
+
+    > li {
+
+        &:before {
+
+            color: $state-danger;
+            content: '\eA16';
+        }
+    }
+}
+
+// unstyled list style
+
+.unstyled-list {
+
+    padding-left: 0;
+    list-style: none;
+
+    li {
+        
+        margin-bottom: 4px;
+    }
+}
+
+// strong list style
+
+.tick-list, .plus-list, .minus-list, .unstyled-list {
+
+    strong {
+
+        font-family: $font-family-regular;
+        color: $title-color;
+    }
+}
+
+// definition list style
+
+.dl-list {
+
+    margin: 0;
+    border-top: 1px dotted #d6d6d6;
+    text-align: left;
+    font-size: 0;
+
+    > dt, > dd { 
+
+        width: 40%;
+        margin: 0;
+        padding: 4px 24px 4px 2px;
+        font-size: $font-size-base;
+        line-height: $line-height-base;
+        word-wrap: break-word;
+        display: inline-block;
+        position: relative;
+    }
+    > dd {
+
+         width: 60%;
+    }
+}
+.dl-list:first-of-type {
+
+    border: none;
+}
+.dl-list:last-of-type {
+
+    margin-bottom: 1rem;
+}
+
+// stats style
+
+.stats {
+
+    text-align: center;
+
+    strong, span {
+
+        font-weight: normal;
+        font-family: $font-family-serif;
+        display: block;
+    }
+    strong {
+
+        margin-top: 14px;
+        font-size: 100px;
+        line-height: 100px;
+        color: $theme-feature-color;
+    }
+    small {
+
+        font-size: 50px;
+        line-height: 1;
+    }
+    p {
+
+        margin: 0 !important;
+        font-size: 90%;
+    }
+    hr {
+
+        width: 40px;
+        margin-top: 24px;
+        margin-bottom: 34px;
+        border-color: $theme-feature-color;
+        border-width: 2px;
+    }
+}
+

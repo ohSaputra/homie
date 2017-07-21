@@ -1,0 +1,39 @@
+// SCSS File
+// columns.scss
+// Modified April 24, 2017
+
+
+// columns style
+
+.columns {
+
+    margin: 0 -20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    @media (max-width: $screen-xs-max) {
+
+        margin: 0;
+    }
+}
+
+// column style 
+
+.column {
+
+    width: calc(33.3% - 40px);
+    margin: 0 20px;
+
+    @media (max-width: $screen-xs-max) {
+
+        width: auto;
+        margin: 0;
+
+        & + .column {
+
+            margin-top: 34px;
+        }
+    }
+}
+

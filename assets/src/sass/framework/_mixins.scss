@@ -1,0 +1,173 @@
+// SCSS File
+// mixins.scss
+// Modified April 24, 2017
+
+
+// layout transform
+
+@mixin layout-transform($size) {
+
+    transform: translateX($size);
+    transform-style: preserve-3d;
+    transition-property: transform;
+    transition-timing-function: $bezier-curve;
+    transition-duration: 0.34s;
+    transition-delay: 0.1s;
+    backface-visibility: hidden;
+    perspective: none;
+}
+
+// layout transition
+
+@mixin layout-transition($transition, $time: $transition-time, $easing: $bezier-curve) {
+
+    transition: $transition $time $bezier-curve;
+    transition-property: $transition;
+}
+
+// vertical align
+
+@mixin vertical-align($position: relative) {
+    
+    position: $position;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+// alternative buttons
+
+@mixin button-color-variant($color, $background, $border, $hover-color, $hover-background, $hover-border) {
+
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: $background;
+    border-color: $border;
+    border-bottom-color: darken($background, 12%);
+    color: $color;
+
+    &:not([href]) {
+
+        color: $color;
+    }
+    &:focus, &.focus {
+
+        color: $color;
+        background-color: darken($background, 6%);
+        border-color: darken($border, 16%);
+    }
+    &:hover, &:not([href]):hover {
+
+        color: $color;
+        background-color: darken($background, 10%);
+        border-color: darken($border, 10%);
+    }
+    &:active, &.active, .open > &.dropdown-toggle {
+
+        color: $color;
+        background-color: darken($background, 10%);
+        border-color: darken($border, 12%);
+
+        &:hover, &:focus, &.focus {
+
+            color: $color;
+            background-color: darken($background, 17%);
+            border-color: darken($border, 25%);
+        }
+    }
+    &:active, &.active, .open > &.dropdown-toggle {
+        
+        background-image: none;
+    }
+    &.disabled, &[disabled], fieldset[disabled] & {
+            
+            &, &:hover, &:focus, &.focus, &:active, &.active {
+            
+            background-color: $background;
+            border-color: $border;
+        }
+    }
+    &[href^=tel] {
+
+        color: $color;
+    }
+    .badge {
+        
+        color: $background;
+        background-color: $color;
+    }
+}
+
+// alternative buttons
+
+@mixin button-ghost-variant($color, $color-hover, $background, $background-hover, $border, $border-hover) {
+
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: $background;
+    border-color: $border;
+    color: $color;
+
+    &:not([href]) {
+
+        color: $color;
+    }
+    &:focus, &.focus {
+
+        background-color: $background-hover;
+        border-color: $border-hover;
+        color: $color-hover;
+    }
+    &:hover, &:not([href]):hover, &[href^=tel]:hover {
+        
+        background-color: $background-hover;
+        border-color: $border-hover;
+        color: $color-hover;
+    }
+    &:active, &.active, .open > &.dropdown-toggle {
+        
+        background-color: $background-hover;
+        border-color: $border-hover;
+        background-image: none;
+        color: $color-hover;
+
+        &:hover, &:focus, &.focus {
+
+            @if $background-hover == #FFFFFF {
+
+                background-color: $background-hover;
+                border-color: darken($border-hover, 14%);
+                color: darken($color-hover, 14%);
+            }
+            @else {
+
+                background-color: darken($background-hover, 17%);
+                border-color: darken($border-hover, 25%);
+                color: $color-hover;
+            }
+        }
+    }
+    &.disabled, &[disabled], fieldset[disabled] & {
+            
+            &, &:hover, &:focus, &.focus, &:active, &.active {
+            
+            background-color: $background;
+            border-color: $border;
+            color: $color;
+        }
+    }
+    &[href^=tel] {
+
+        color: $color;
+    }
+    .loading {
+
+        > span {
+
+            background-color: $color;
+        }
+    }
+    .badge {
+        
+        color: $background;
+        background-color: $color;
+    }
+}
+

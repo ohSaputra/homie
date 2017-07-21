@@ -1,0 +1,718 @@
+// SCSS File
+// utilities.scss
+// Modified April 24, 2017
+
+
+// misc style
+
+.block {
+
+    display: block;
+}
+.nowrap {
+
+    white-space: nowrap;
+}
+.text-indent {
+
+    font-size: 0;
+    text-indent: -9999px;
+    display: block;
+}
+.spacer {
+
+    font-size: 0;
+    line-height: 0;
+}
+
+// font style
+
+.font-light {
+
+    font-family: $font-family-light;
+}
+.font-regular {
+
+    font-family: $font-family-regular;
+}
+.font-bold {
+
+    font-family: $font-family-semibold;
+}
+.font-script {
+
+    font-family: $font-family-script;
+}
+.font-serif {
+
+    font-family: $font-family-serif;
+}
+
+// text style
+
+.text-positive {
+
+    color: $positive-color;
+}
+.text-negative {
+
+    color: $negative-color;
+}
+.text-neutral {
+
+    color: $neutral-color;
+}
+.text-info {
+
+    color: $info-color;
+}
+.text-white {
+
+    color: $white-color;
+}
+.text-black {
+
+    color: $black-color;
+}
+.text-title {
+
+    color: $title-color;
+}
+.text-dark {
+
+    color: $lead-color;
+}
+.text-default {
+
+    color: $text-color;
+}
+.text-medium {
+
+    color: $label-dark-color;
+}
+.text-light {
+
+    color: $label-color;
+}
+
+// margin reset style 
+
+.m-l-0 {
+
+	margin-left: 0 !important;
+}
+.m-r-0 {
+
+	margin-right: 0 !important;
+}
+.m-t-0 {
+
+	margin-top: 0 !important;
+}
+.m-b-0 {
+
+	margin-bottom: 0 !important;
+}
+.m-x-0 {
+
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+.m-y-0 {
+
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+.m-a-0 {
+
+	margin: 0 !important;
+}
+
+// margin half style 
+
+.m-l-05x {
+
+	margin-left: floor(($spacer / 2)) !important;
+}
+.m-r-05x {
+
+	margin-right: floor(($spacer / 2)) !important;
+}
+.m-t-05x {
+
+	margin-top: floor(($spacer / 2)) !important;
+}
+.m-b-05x {
+
+	margin-bottom: floor(($spacer / 2)) !important;
+}
+.m-x-05x {
+
+	margin-left: floor(($spacer / 2)) !important;
+	margin-right: floor(($spacer / 2)) !important;
+}
+.m-y-05x {
+
+	margin-top: floor(($spacer / 2)) !important;
+	margin-bottom: floor(($spacer / 2)) !important;
+}
+.m-a-05x {
+
+	margin: floor(($spacer / 2)) !important;
+}
+
+// margin default style 
+
+.m-l-1x {
+
+	margin-left: $spacer !important;
+}
+.m-r-1x {
+
+	margin-right: $spacer !important;
+}
+.m-t-1x {
+
+	margin-top: $spacer !important;
+}
+.m-b-1x {
+
+	margin-bottom: $spacer !important;
+}
+.m-x-1x {
+
+	margin-left: $spacer !important;
+	margin-right: $spacer !important;
+}
+.m-y-1x {
+
+	margin-top: $spacer !important;
+	margin-bottom: $spacer !important;
+}
+.m-a-1x {
+
+	margin: $spacer !important;
+}
+
+// margin double style 
+
+.m-l-2x {
+
+	margin-left: $spacer-double !important;
+}
+.m-r-2x {
+
+	margin-right: $spacer-double !important;
+}
+.m-t-2x {
+
+	margin-top: $spacer-double !important;
+}
+.m-b-2x {
+
+	margin-bottom: $spacer-double !important;
+}
+.m-x-2x {
+
+	margin-left: $spacer-double !important;
+	margin-right: $spacer-double !important;
+}
+.m-y-2x {
+
+	margin-top: $spacer-double !important;
+	margin-bottom: $spacer-double !important;
+}
+.m-a-2x {
+
+	margin: $spacer-double !important;
+}
+
+// margin triple style 
+
+.m-l-3x {
+
+	margin-left: $spacer-triple !important;
+}
+.m-r-3x {
+
+	margin-right: $spacer-triple !important;
+}
+.m-t-3x {
+
+	margin-top: $spacer-triple !important;
+}
+.m-b-3x {
+
+	margin-bottom: $spacer-triple !important;
+}
+.m-x-3x {
+
+	margin-left: $spacer-triple !important;
+	margin-right: $spacer-triple !important;
+}
+.m-y-3x {
+
+	margin-top: $spacer-triple !important;
+	margin-bottom: $spacer-triple !important;
+}
+.m-a-3x {
+
+	margin: $spacer-triple !important;
+}
+
+// margin fourfold style 
+
+.m-l-4x {
+
+	margin-left: $spacer-fourfold !important;
+}
+.m-r-4x {
+
+	margin-right: $spacer-fourfold !important;
+}
+.m-t-4x {
+
+	margin-top: $spacer-fourfold !important;
+}
+.m-b-4x {
+
+	margin-bottom: $spacer-fourfold !important;
+}
+.m-x-4x {
+
+	margin-left: $spacer-fourfold !important;
+	margin-right: $spacer-fourfold !important;
+}
+.m-y-4x {
+
+	margin-top: $spacer-fourfold !important;
+	margin-bottom: $spacer-fourfold !important;
+}
+.m-a-4x {
+
+	margin: $spacer-fourfold !important;
+}
+
+// margin quintuple style 
+
+.m-l-5x {
+
+	margin-left: $spacer-quintuple !important;
+}
+.m-r-5x {
+
+	margin-right: $spacer-quintuple !important;
+}
+.m-t-5x {
+
+	margin-top: $spacer-quintuple !important;
+}
+.m-b-5x {
+
+	margin-bottom: $spacer-quintuple !important;
+}
+.m-x-5x {
+
+	margin-left: $spacer-quintuple !important;
+	margin-right: $spacer-quintuple !important;
+}
+.m-y-5x {
+
+	margin-top: $spacer-quintuple !important;
+	margin-bottom: $spacer-quintuple !important;
+}
+.m-a-5x {
+
+	margin: $spacer-quintuple !important;
+}
+
+// padding reset style 
+
+.p-l-0 {
+
+	padding-left: 0 !important;
+}
+.p-r-0 {
+
+	padding-right: 0 !important;
+}
+.p-t-0 {
+
+	padding-top: 0 !important;
+}
+.p-b-0 {
+
+	padding-bottom: 0 !important;
+}
+.p-x-0 {
+
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+.p-y-0 {
+
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+.p-a-0 {
+
+	padding: 0 !important;
+}
+
+// padding half style 
+
+.p-l-05x {
+
+	padding-left: floor(($spacer / 2)) !important;
+}
+.p-r-05x {
+
+	padding-right: floor(($spacer / 2)) !important;
+}
+.p-t-05x {
+
+	padding-top: floor(($spacer / 2)) !important;
+}
+.p-b-05x {
+
+	padding-bottom: floor(($spacer / 2)) !important;
+}
+.p-x-05x {
+
+	padding-left: floor(($spacer / 2)) !important;
+	padding-right: floor(($spacer / 2)) !important;
+}
+.p-y-05x {
+
+	padding-top: floor(($spacer / 2)) !important;
+	padding-bottom: floor(($spacer / 2)) !important;
+}
+.p-a-05x {
+
+	padding: floor(($spacer / 2)) !important;
+}
+
+// padding default style 
+
+.p-l-1x {
+
+	padding-left: $spacer !important;
+}
+.p-r-1x {
+
+	padding-right: $spacer !important;
+}
+.p-t-1x {
+
+	padding-top: $spacer !important;
+}
+.p-b-1x {
+
+	padding-bottom: $spacer !important;
+}
+.p-x-1x {
+
+	padding-left: $spacer !important;
+	padding-right: $spacer !important;
+}
+.p-y-1x {
+
+	padding-top: $spacer !important;
+	padding-bottom: $spacer !important;
+}
+.p-a-1x {
+
+	padding: $spacer !important;
+}
+
+// padding double style 
+
+.p-l-2x {
+
+	padding-left: $spacer-double !important;
+}
+.p-r-2x {
+
+	padding-right: $spacer-double !important;
+}
+.p-t-2x {
+
+	padding-top: $spacer-double !important;
+}
+.p-b-2x {
+
+	padding-bottom: $spacer-double !important;
+}
+.p-x-2x {
+
+	padding-left: $spacer-double !important;
+	padding-right: $spacer-double !important;
+}
+.p-y-2x {
+
+	padding-top: $spacer-double !important;
+	padding-bottom: $spacer-double !important;
+}
+.p-a-2x {
+
+	padding: $spacer-double !important;
+}
+
+// padding triple style 
+
+.p-l-3x {
+
+	padding-left: $spacer-triple !important;
+}
+.p-r-3x {
+
+	padding-right: $spacer-triple !important;
+}
+.p-t-3x {
+
+	padding-top: $spacer-triple !important;
+}
+.p-b-3x {
+
+	padding-bottom: $spacer-triple !important;
+}
+.p-x-3x {
+
+	padding-left: $spacer-triple !important;
+	padding-right: $spacer-triple !important;
+}
+.p-y-3x {
+
+	padding-top: $spacer-triple !important;
+	padding-bottom: $spacer-triple !important;
+}
+.p-a-3x {
+
+	padding: $spacer-triple !important;
+}
+
+// padding fourfold style 
+
+.p-l-4x {
+
+	padding-left: $spacer-fourfold !important;
+}
+.p-r-4x {
+
+	padding-right: $spacer-fourfold !important;
+}
+.p-t-4x {
+
+	padding-top: $spacer-fourfold !important;
+}
+.p-b-4x {
+
+	padding-bottom: $spacer-fourfold !important;
+}
+.p-x-4x {
+
+	padding-left: $spacer-fourfold !important;
+	padding-right: $spacer-fourfold !important;
+}
+.p-y-4x {
+
+	padding-top: $spacer-fourfold !important;
+	padding-bottom: $spacer-fourfold !important;
+}
+.p-a-4x {
+
+	padding: $spacer-fourfold !important;
+}
+
+// padding quintuple style 
+
+.p-l-5x {
+
+	padding-left: $spacer-quintuple !important;
+}
+.p-r-5x {
+
+	padding-right: $spacer-quintuple !important;
+}
+.p-t-5x {
+
+	padding-top: $spacer-quintuple !important;
+}
+.p-b-5x {
+
+	padding-bottom: $spacer-quintuple !important;
+}
+.p-x-5x {
+
+	padding-left: $spacer-quintuple !important;
+	padding-right: $spacer-quintuple !important;
+}
+.p-y-5x {
+
+	padding-top: $spacer-quintuple !important;
+	padding-bottom: $spacer-quintuple !important;
+}
+.p-a-5x {
+
+	padding: $spacer-quintuple !important;
+}
+
+// opacity style
+
+.o10 {
+
+	opacity: 0.1 !important;
+}
+.o20 {
+
+	opacity: 0.2 !important;
+}
+.o30 {
+
+	opacity: 0.3 !important;
+}
+.o40 {
+
+	opacity: 0.4 !important;
+}
+.o50 {
+
+	opacity: 0.5 !important;
+}
+.o60 {
+
+	opacity: 0.6 !important;
+}
+.o70 {
+
+	opacity: 0.7 !important;
+}
+.o80 {
+
+	opacity: 0.8 !important;
+}
+.o90 {
+
+	opacity: 0.9 !important;
+}
+
+// font size style
+
+.f40 {
+
+	font-size: 40% !important;
+}
+.f50 {
+
+	font-size: 50% !important;
+}
+.f60 {
+
+	font-size: 60% !important;
+}
+.f70 {
+
+	font-size: 70% !important;
+}
+.f80 {
+
+	font-size: 80% !important;
+}
+.f90 {
+
+	font-size: 90% !important;
+}
+.f100 {
+
+	font-size: 100% !important;
+}
+.f110 {
+
+	font-size: 110% !important;
+}
+.f120 {
+
+	font-size: 120% !important;
+}
+.f130 {
+
+	font-size: 130% !important;
+}
+.f140 {
+
+	font-size: 140% !important;
+}
+.f150 {
+
+	font-size: 150% !important;
+}
+.f160 {
+
+	font-size: 160% !important;
+}
+.f170 {
+
+	font-size: 170% !important;
+}
+.f180 {
+
+	font-size: 180% !important;
+}
+.f190 {
+
+	font-size: 190% !important;
+}
+.f200 {
+
+	font-size: 200% !important;
+}
+.f220 {
+
+	font-size: 220% !important;
+}
+.f240 {
+
+	font-size: 240% !important;
+}
+.f260 {
+
+	font-size: 260% !important;
+}
+.f280 {
+
+	font-size: 280% !important;
+}
+
+// text alignment style
+
+@media (min-width: 0) {
+
+	.text-xs-left { text-align: left !important; }
+	.text-xs-right { text-align: right !important; }
+	.text-xs-center { text-align: center !important; }
+}
+@media (min-width: $screen-xs) {
+
+	.text-sm-left { text-align: left !important; }
+	.text-sm-right { text-align: right !important; }
+	.text-sm-center { text-align: center !important; }
+}
+@media (min-width: $screen-sm) {
+
+	.text-md-left { text-align: left !important; }
+	.text-md-right { text-align: right !important; }
+	.text-md-center { text-align: center !important; }
+}
+@media (min-width: $screen-md) {
+
+	.text-lg-left { text-align: left !important; }
+	.text-lg-right { text-align: right !important; }
+	.text-lg-center { text-align: center !important; }
+}
+@media (min-width: $screen-lg) {
+
+	.text-xl-left { text-align: left !important; }
+	.text-xl-right { text-align: right !important; }
+	.text-xl-center { text-align: center !important; }
+}
+

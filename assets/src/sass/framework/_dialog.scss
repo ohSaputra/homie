@@ -1,0 +1,140 @@
+﻿// SCSS File
+// dialog.scss
+// Modified July 13, 2017
+
+.dialog {
+    width: 496px;
+    margin: 0 auto;
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    @media (max-height: 900px) {
+        margin: 0 auto;
+        margin-top: 42px;
+        padding-bottom: 24px;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+
+
+    @media (max-width: $screen-sm-max) {
+        margin: 0 auto;
+        margin-top: 42px;
+        padding-bottom: 24px;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+
+    @media (max-width: 767px) {
+        width: auto;
+        margin: 0 auto;
+    }
+}
+
+// Separate fullscreen login dialog from the rest
+.dialog-fullscreen {
+    margin-left: -248px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+    left: 50%;
+    top: 42%;
+}
+
+.dialog-logo {
+    padding: 24px 34px;
+    text-align: center;
+
+    @media (max-height: 900px) {
+        margin-top: -42px;
+    }
+
+    @media (max-width: $screen-md-max) {
+        margin-top: -42px;
+    }
+
+    @media (max-width: $screen-xs-max) {
+        margin-top: 0;
+    }
+}
+
+.dialog-head {
+    min-height: 72px;
+    padding: 22px 34px;
+    background-color: #00ACEE;
+    border-radius: 6px 6px 0 0;
+    text-align: center;
+    color: #FFFFFF;
+
+    @media (max-width: $screen-md-max) {
+        border-radius: 0;
+    }
+
+    @media (max-width: $screen-xs-max) {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}
+
+.dialog-head + .dialog-body {
+    border-radius: 0 0 6px 6px;
+}
+
+.dialog-body {
+    min-height: 240px;
+    padding: 34px;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    text-align: center;
+}
+
+@media (max-width: 991px) {
+    .dialog-body {
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .dialog-body {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}
+
+.dialog-foot {
+    padding: 10px 0;
+    color: #667B99;
+    text-align: center;
+    font-size: 90%;
+}
+
+@media (max-width: 991px) {
+    .dialog-foot {
+        padding: 10px 34px;
+    }
+}
+
+@media (max-width: 767px) {
+    .dialog-foot {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .dialog-foot .pull-sm-left {
+        margin-bottom: 14px;
+    }
+}
+
+.dialog-form fieldset > *:first-child {
+    margin-top: 0;
+}
+
+.dialog-form .btn {
+    margin-bottom: 0;
+}

@@ -1,0 +1,79 @@
+// SCSS File
+// tabs.scss
+// Modified April 24, 2017
+
+
+// tabs style
+
+.tabs {
+
+	position: relative;
+
+	.tab {
+
+		padding-top: 14px;
+		display: none;
+
+		&.active {
+
+			display: block
+		}
+		> *:first-child {
+
+			margin-top: 0;
+		} 
+	}
+}
+
+// tabs inline style
+
+.tabs-inline {
+
+	.tab {
+
+		padding: 0;
+	}
+}
+
+// tab menu style
+
+.tab-menu {
+
+	border-bottom: 1px solid $border-color;
+
+	.nav-item {
+
+		margin-right: 1px;
+		margin-bottom: -1px;
+		position: relative;
+		font-size: 90%;
+    	display: block;
+    	float: left;
+
+    	&.active .nav-link {
+
+    		border-bottom-color: $theme-body-color;
+    		background-color: $theme-body-color;
+    		color: $text-color;
+    	}
+	}
+	.nav-link {
+
+		padding: 12px 24px 13px;
+		border-radius: 3px 3px 0 0;
+		border: 1px solid $border-color;
+		background-color: $theme-highlight-color;
+		text-align: center;
+		color: $text-color;
+
+		&:hover, &:focus {
+			
+			background-color: $theme-body-color;
+			color: $label-dark-color;
+		}
+	}
+    .article & {
+
+    	padding-top: 24px;
+    }
+}

@@ -1,106 +1,80 @@
 /*!
-Theme Name: homie
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
-Description: Description
-Version: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
-Text Domain: homie
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-homie is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
+ Theme Name:   OTOBRO microsite
+ Theme URI:    http://c88fin.com/
+ Description:  OTOBRO microsite based on C88's microsite theme
+ Author:       Pria Purnama
+ Author URI:   http://c88fin.com
+ Template:     compare-master
+ Version:      1.0.0
+ Text Domain:  otobro-microsite
 */
 
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-	## Posts and pages
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
---------------------------------------------------------------*/
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
-
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
-@import "normalize";
-
-/*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
-@import "typography/typography";
-
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-@import "elements/elements";
-
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
-@import "forms/forms";
-
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-@import "navigation/navigation";
-
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-@import "modules/accessibility";
-
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-@import "modules/alignments";
-
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-@import "modules/clearings";
-
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-@import "site/secondary/widgets";
-
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-@import "site/site";
-
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-@import "modules/infinite-scroll";
-
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
-@import "media/media";
+// framework variables
+@import "framework/functions";
+@import "framework/variables";
+@import "framework/fontface";
+// Core variables and mixins
+@import "bootstrap/bootstrap/variables";
+@import "bootstrap/bootstrap/mixins";
+// Reset and dependencies
+@import "bootstrap/bootstrap/normalize";
+// framework layout
+@import "framework/mixins";
+@import "framework/layout";
+@import "framework/layout-header";
+@import "framework/layout-footer";
+@import "framework/layout-drawer";
+@import "framework/icons";
+// Core CSS
+@import "bootstrap/bootstrap/scaffolding";
+@import "bootstrap/bootstrap/type";
+@import "bootstrap/bootstrap/code";
+@import "bootstrap/bootstrap/grid";
+@import "bootstrap/bootstrap/tables";
+@import "bootstrap/bootstrap/forms";
+// Components
+@import "bootstrap/bootstrap/navs";
+@import "bootstrap/bootstrap/button-groups";
+@import "bootstrap/bootstrap/input-groups";
+@import "bootstrap/bootstrap/modals";
+@import "bootstrap/bootstrap/media";
+@import "bootstrap/bootstrap/alerts";
+@import "bootstrap/bootstrap/close";
+// Components w/ JavaScript
+@import "bootstrap/bootstrap/modals";
+@import "bootstrap/bootstrap/tooltip";
+@import "bootstrap/bootstrap/popovers";
+// Utility classes
+@import "bootstrap/bootstrap/utilities";
+@import "bootstrap/bootstrap/responsive-utilities";
+// ------------------------- avoid changing these ------------------------- //
+// framework core
+@import "framework/typesetting";
+@import "framework/article";
+@import "framework/display";
+@import "framework/utilities";
+@import "framework/modal";
+@import "framework/media";
+@import "framework/share";
+@import "framework/tabs";
+// framework form
+@import "framework/buttons";
+@import "framework/alert";
+@import "framework/forms";
+@import "framework/form-radio";
+@import "framework/form-checkbox";
+@import "framework/form-feedback";
+@import "framework/form-addon";
+@import "framework/form-search";
+// ---------------- these can be modified, but with caution --------------- //
+// framework utility
+@import "framework/menus";
+@import "framework/content";
+@import "framework/breadcrumb";
+@import "framework/section";
+@import "framework/widget";
+@import "framework/cards";
+@import "framework/columns";
+@import "framework/grid";
+// custom components
+@import "framework/dialog";

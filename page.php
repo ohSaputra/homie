@@ -1,38 +1,88 @@
 <?php
 /**
- * The template for displaying all pages
+ * The template for displaying a content page
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
+ * @link http://codex.wordpress.org/Template_Hierarchy
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package homie
+ * @package WordPress
+ * @subpackage Compare_Master
+ * @since Compare Master 1.0
  */
 
-get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+    $layout = get_post_meta(get_page_id(), 'page_layout', true);
 
-			<?php
-			while ( have_posts() ) : the_post();
+?>
+<?php get_header(); ?>
 
-				get_template_part( 'template-parts/content', 'page' );
+            <!-- content starts -->
+                <div class="layout-content">
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+                    <!-- main starts -->
+                        <main class="main" role="main">
 
-			endwhile; // End of the loop.
-			?>
+                            <?php $page_id = get_page_id(); ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+                            <?php // except login page and front page ?>
+                            <?php if ( is_front_page() === false && $page_id !== 339 ) : ?>
 
-<?php
-get_sidebar();
-get_footer();
+                            <!-- display starts -->
+                                <div class="display display-cover display-promo">
+                                    <div class="display-content">
+
+                                        <?php get_template_part('includes/menu/breadcrumb', ''); ?>
+
+                                    </div>
+                                    <div class="display-graphic">
+
+                                        <?php get_template_part('includes/menu/cover-page', ''); ?>
+                                                                                        
+                                    </div>
+                                </div>
+                            <!-- display ends -->
+
+                            <?php endif; ?>
+
+                            <?php if ($layout == 'custom') : ?>
+
+                                <?php get_template_part('includes/layout/page', ''); ?>
+
+                            <?php elseif ($layout == 'full') : ?>
+
+                            <!-- article starts -->
+                                <article class="article">
+                                    <div class="content container">
+
+                                        <?php get_template_part('includes/layout/page', ''); ?>
+
+                                    </div>
+                                </article>
+                            <!-- article ends -->
+
+                            <?php else : ?>
+
+                            <!-- article starts -->
+                                <article class="article article-sidebar">
+                                    <div class="content container">
+                                        <div class="story">
+                                            <?php get_template_part('includes/layout/page', ''); ?>
+                                        </div>
+
+                                        <aside class="sidebar sidebar-sticky">
+                                            <?php get_sidebar(); ?>
+                                        </aside>
+                                    </div>
+                                </article>
+                            <!-- article ends -->
+
+                            <?php endif; ?>
+
+                        </main>
+                    <!-- main ends -->
+
+                    <?php get_template_part('includes/layout/footer', ''); ?>
+
+                </div>
+            <!-- content ends -->
+
+<?php get_footer(); ?>

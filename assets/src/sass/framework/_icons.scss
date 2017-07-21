@@ -1,0 +1,168 @@
+// SCSS File
+// icons.scss
+// Modified April 24, 2017
+
+
+// font face style */
+
+@font-face { font-family: 'glyphs'; src: url('../fonts/c88fin-glyphs.woff2') format('woff2'), url('../fonts/c88fin-glyphs.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+// icon style
+
+[class^="i-"], [class*=" i-"] { width: 16px; height: 16px; margin: 0; font-size: 16px; text-align: center; text-indent: -9999px; white-space: nowrap; overflow: hidden; vertical-align: middle; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; display: inline-block; position: relative; }
+[class^="i-"]:before, [class*=" i-"]:before, [class^="i-"]:after, [class*=" i-"]:after { width: inherit; height: inherit; font-family: 'glyphs'; font-size: inherit; line-height: 1; text-indent: 0; font-weight: normal !important; font-style: normal !important; white-space: normal; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-smoothing: antialiased; text-rendering: optimizeLegibility; display: block; position: absolute; z-index: 1; top: 0; left: 0; speak: none; }
+[class^="i-"]:after, [class*=" i-"]:after { z-index: 0; }
+
+// icon size style
+
+.i-1x, .i-16 { width: 16px; height: 16px; font-size: 16px; }
+.i-2x, .i-24 { width: 24px; height: 24px; font-size: 24px; }
+.i-3x, .i-32 { width: 32px; height: 32px; font-size: 32px; }
+.i-4x, .i-48 { width: 48px; height: 48px; font-size: 48px; }
+.i-5x, .i-64 { width: 64px; height: 64px; font-size: 64px; }
+.i-6x, .i-96 { width: 96px; height: 96px; font-size: 96px; }
+
+// icon custom size style
+
+.i-20 { width: 20px; height: 20px; font-size: 20px; vertical-align: -3px; }
+
+// icon align style
+
+.i-left { margin-right: 8px; }
+.i-right { margin-left: 8px; }
+
+// icon vertical align style
+
+.i-1v { vertical-align: -2px; }
+.i-2v { vertical-align: -5px; }
+.i-3v { vertical-align: -10px; }
+.i-4v { vertical-align: -15px; }
+.i-5v { vertical-align: -19px; }
+.i-6v { vertical-align: -23px; }
+
+// glyphs style
+
+.i-action-account:before { content: "\eA01"; } 
+.i-action-alert-circle-solid:before { content: "\eA02"; } 
+.i-action-attachment:before { content: "\eA03"; } 
+.i-action-calendar:before { content: "\eA07"; } 
+.i-action-calendar-date:before { content: "\eA04"; } 
+.i-action-calendar-error:before { content: "\eA05"; } 
+.i-action-calendar-update:before { content: "\eA06"; } 
+.i-action-cross:before { content: "\eA0B"; } 
+.i-action-cross-circle-solid:before { content: "\eA08"; } 
+.i-action-cross-circle-thin:before { content: "\eA09"; } 
+.i-action-cross-thin:before { content: "\eA0A"; } 
+.i-action-download:before { content: "\eA0C"; } 
+.i-action-favorite:before { content: "\eA0D"; } 
+.i-action-filter:before { content: "\eA0E"; } 
+.i-action-hamburger:before { content: "\eA0F"; } 
+.i-action-info-circle:before { content: "\eA11"; } 
+.i-action-info-circle-solid:before { content: "\eA10"; } 
+.i-action-link:before { content: "\eA12"; } 
+.i-action-lock:before { content: "\eA13"; } 
+.i-action-minus:before { content: "\eA16"; } 
+.i-action-minus-circle-thin:before { content: "\eA14"; } 
+.i-action-minus-thin:before { content: "\eA15"; } 
+.i-action-notification:before { content: "\eA17"; } 
+.i-action-photo:before { content: "\eA18"; } 
+.i-action-plus:before { content: "\eA1B"; } 
+.i-action-plus-circle-thin:before { content: "\eA19"; } 
+.i-action-plus-thin:before { content: "\eA1A"; } 
+.i-action-progress-thin:before { content: "\eA1C"; } 
+.i-action-refresh:before { content: "\eA1D"; } 
+.i-action-reload-thin:before { content: "\eA1E"; } 
+.i-action-rotate-thin:before { content: "\eA1F"; } 
+.i-action-search:before { content: "\eA20"; } 
+.i-action-settings:before { content: "\eA21"; } 
+.i-action-sign-out:before { content: "\eA22"; } 
+.i-action-speech:before { content: "\eA23"; } 
+.i-action-tick:before { content: "\eA27"; } 
+.i-action-tick-circle-solid:before { content: "\eA24"; } 
+.i-action-tick-circle-thin:before { content: "\eA25"; } 
+.i-action-tick-thin:before { content: "\eA26"; } 
+.i-action-time:before { content: "\eA29"; } 
+.i-action-time-thick:before { content: "\eA28"; } 
+.i-action-upload:before { content: "\eA2A"; } 
+.i-arrow-double-left:before { content: "\eA2B"; } 
+.i-arrow-double-right:before { content: "\eA2C"; } 
+.i-arrow-down:before { content: "\eA30"; } 
+.i-arrow-down-crisp:before { content: "\eA2D"; } 
+.i-arrow-down-mini:before { content: "\eA2E"; } 
+.i-arrow-down-thin:before { content: "\eA2F"; } 
+.i-arrow-left:before { content: "\eA34"; } 
+.i-arrow-left-crisp:before { content: "\eA31"; } 
+.i-arrow-left-mini:before { content: "\eA32"; } 
+.i-arrow-left-thin:before { content: "\eA33"; } 
+.i-arrow-right:before { content: "\eA38"; } 
+.i-arrow-right-crisp:before { content: "\eA35"; } 
+.i-arrow-right-mini:before { content: "\eA36"; } 
+.i-arrow-right-thin:before { content: "\eA37"; } 
+.i-arrow-toggle-horizontal:before { content: "\eA39"; } 
+.i-arrow-toggle-vertical:before { content: "\eA3A"; } 
+.i-arrow-up:before { content: "\eA3E"; } 
+.i-arrow-up-crisp:before { content: "\eA3B"; } 
+.i-arrow-up-mini:before { content: "\eA3C"; } 
+.i-arrow-up-thin:before { content: "\eA3D"; } 
+.i-display-email:before { content: "\eA3F"; } 
+.i-display-phone:before { content: "\eA40"; } 
+.i-hint-down:before { content: "\eA41"; } 
+.i-hint-left:before { content: "\eA42"; } 
+.i-hint-point-left:before { content: "\eA43"; } 
+.i-hint-point-right:before { content: "\eA44"; } 
+.i-hint-right:before { content: "\eA45"; } 
+.i-hint-swirl-left:before { content: "\eA46"; } 
+.i-hint-swirl-right:before { content: "\eA47"; } 
+.i-hint-up:before { content: "\eA48"; } 
+.i-listing-cards:before { content: "\eA49"; } 
+.i-listing-table:before { content: "\eA4A"; } 
+.i-menu-belief:before { content: "\eA4B"; } 
+.i-menu-big-data-solution:before { content: "\eA4C"; } 
+.i-menu-brands:before { content: "\eA4D"; } 
+.i-menu-credit-solution:before { content: "\eA4E"; } 
+.i-menu-data-solution:before { content: "\eA4F"; } 
+.i-menu-engineering:before { content: "\eA50"; } 
+.i-menu-investors:before { content: "\eA51"; } 
+.i-menu-managed-solution:before { content: "\eA52"; } 
+.i-menu-selling-solution:before { content: "\eA53"; } 
+.i-menu-team:before { content: "\eA54"; } 
+.i-mood-happy:before { content: "\eA55"; } 
+.i-mood-unhappy:before { content: "\eA56"; } 
+.i-more-horizontal:before { content: "\eA57"; } 
+.i-more-vertical:before { content: "\eA58"; } 
+.i-pointer-down:before { content: "\eA5A"; } 
+.i-pointer-down-thin:before { content: "\eA59"; } 
+.i-pointer-left:before { content: "\eA5C"; } 
+.i-pointer-left-thin:before { content: "\eA5B"; } 
+.i-pointer-right:before { content: "\eA5E"; } 
+.i-pointer-right-thin:before { content: "\eA5D"; } 
+.i-pointer-up:before { content: "\eA60"; } 
+.i-pointer-up-thin:before { content: "\eA5F"; } 
+.i-quotes-end:before { content: "\eA61"; } 
+.i-quotes-start:before { content: "\eA62"; } 
+.i-sign-in-circle:before { content: "\eA63"; } 
+.i-sign-in-square:before { content: "\eA64"; } 
+.i-sign-out-circle:before { content: "\eA65"; } 
+.i-sign-out-square:before { content: "\eA66"; } 
+.i-social-behance:before { content: "\eA67"; } 
+.i-social-dribbble:before { content: "\eA68"; } 
+.i-social-facebook:before { content: "\eA69"; } 
+.i-social-ga:before { content: "\eA6A"; } 
+.i-social-google:before { content: "\eA6B"; } 
+.i-social-gravatar:before { content: "\eA6C"; } 
+.i-social-instagram:before { content: "\eA6D"; } 
+.i-social-line:before { content: "\eA6E"; } 
+.i-social-linkedin:before { content: "\eA6F"; } 
+.i-social-moz:before { content: "\eA70"; } 
+.i-social-pinterest:before { content: "\eA71"; } 
+.i-social-rss:before { content: "\eA72"; } 
+.i-social-tripadvisor:before { content: "\eA73"; } 
+.i-social-twitter:before { content: "\eA74"; } 
+.i-social-vimeo:before { content: "\eA75"; } 
+.i-social-weibo:before { content: "\eA76"; } 
+.i-social-whatsapp:before { content: "\eA77"; } 
+.i-social-wordpress:before { content: "\eA78"; } 
+.i-social-youtube:before { content: "\eA79"; } 
+.i-thumbs-down:before { content: "\eA7A"; } 
+.i-thumbs-up:before { content: "\eA7B"; } 
+

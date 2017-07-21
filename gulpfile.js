@@ -27,7 +27,7 @@ gulp.task('sass', function() {
         .pipe(sass())
         .pipe(prefix('last 2 versions', '> 1%', 'ie 8', 'Android 2', 'Firefox ESR'))
         .pipe(plumber())
-        .pipe(gulp.dest('./'));
+        .pipe(gulp.dest('assets/dist/css'));
 });
 
 /**
@@ -44,7 +44,7 @@ gulp.task('sass:clean', function() {
         .pipe(sass({ outputStyle: 'compressed' }))
         .pipe(prefix('last 2 versions', '> 1%', 'ie 8', 'Android 2', 'Firefox ESR'))
         .pipe(plumber())
-        .pipe(gulp.dest('./'));
+        .pipe(gulp.dest('assets/dist/css'));
 });
 
 /**

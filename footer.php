@@ -2,32 +2,31 @@
 /**
  * The template for displaying the footer
  *
- * Contains the closing of the #content div and all content after.
+ * Contains the closing of the #content div and all content after
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package homie
+ * @package WordPress
+ * @subpackage Compare_Master
+ * @since Compare Master 1.0
  */
-
 ?>
+            <!-- drawer starts -->
+                <div class="layout-drawer" role="drawer">
 
-	</div><!-- #content -->
+                    <?php get_template_part('includes/layout/drawer', ''); ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'homie' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'homie' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'homie' ), 'homie', '<a href="https://automattic.com/">Underscores.me</a>' );
-			?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+                </div>
+            <!-- drawer ends -->
 
+            <!-- backdrop starts -->
+                <div class="layout-backdrop"></div>
+            <!-- backdrop ends -->
+
+        </div>
+    <!-- layout ends -->
+
+<?php get_template_part('includes/footer/javascript', ''); ?>
+<?php get_template_part('includes/footer/javascript', 'analytics'); ?>
+<?php get_template_part('includes/footer/javascript', 'custom'); ?>
 <?php wp_footer(); ?>
 
 </body>
