@@ -20,6 +20,34 @@
 
             padding-bottom: 0;
         }
+
+        .trend-slider {
+            float:left;
+            width:100%;
+            position:relative;
+            background: $white-color;
+            overflow:hidden;
+            position:relative;
+
+            .slider-container {
+                float:left;
+                width:100%;
+                background: $black-color;
+                position: relative;
+                right:33.3%;
+            }
+        }
+        .left-banner {
+            float: left;
+            padding-right: 0;
+            left: 33.3%;
+        }
+        .right-banner {
+            float: left;
+            padding-left: 0;
+            color: $white-color;
+            left: 33.3%;
+        }
     }
     .form {
         

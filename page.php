@@ -45,6 +45,24 @@
 
                             <?php if ($layout == 'custom') : ?>
 
+                            <!-- article starts -->
+                                <article class="article">
+                                    <div class="content container">
+                                        
+                                        <div class="trend-slider">
+                                            <div class="row slider-container">
+                                                <div class="col-md-8 left-banner">
+                                                </div>
+                                                <div class="col-md-4 right-banner"></div>
+                                            </div>
+                                        </div>
+
+                                        <?php get_template_part('includes/layout/page', ''); ?>
+
+                                    </div>
+                                </article>
+                            <!-- article ends -->
+
                                 <?php get_template_part('includes/layout/page', ''); ?>
 
                             <?php elseif ($layout == 'full') : ?>

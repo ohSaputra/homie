@@ -11,7 +11,7 @@
     $description = get_bloginfo('description');
 
     $url = home_url();
-    $logo = isset($source[0]['url']) ? site_url().$source[0]['url'] : THEME_ASSETS . '/img/c88fin-logo@2x.png';
+    $logo = isset($source[0]['url']) ? site_url().$source[0]['url'] : THEME_ASSETS . 'assets/dist/images/c88fin-logo@2x.png';
 
     if (!empty($logo)) {
 

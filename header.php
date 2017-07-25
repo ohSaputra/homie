@@ -60,13 +60,13 @@
                     <?php get_template_part('includes/layout/head', ''); ?>
 
                     <!-- toggle starts -->
-                        <div class="toggle-menu">
+                        <!--<div class="toggle-menu">
                             <div class="container">
 
-                                <?php get_template_part('includes/menu/submenu', ''); ?>
+                                <?php //get_template_part('includes/menu/submenu', ''); ?>
 
                             </div>
-                        </div>
+                        </div>-->
                     <!-- toggle ends -->
 
                 </header>

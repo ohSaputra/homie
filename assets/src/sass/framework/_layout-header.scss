@@ -1,44 +1,76 @@
 // SCSS File
 // layout-header.scss
-// Modified April 24, 2017
-
+// Modified July 24, 2017
 
 // layout header style
 
-.layout-header { 
-
+.layout-header {
     .head {
-
+        
         height: inherit;
         position: relative;
         z-index: 1;
-                
+
+        nav {
+            position: absolute;
+            padding-left: 15px;
+            left: 0;
+
+            ul {
+                padding-left: 0;
+                padding-top: 10px;
+                padding-right: 15px;
+                margin: 0;
+
+                li {
+                    list-style-type: none;
+                    display: inline;
+                    font-family: $font-family-semibold
+                }
+            }
+        }
+
         .logo {
 
-	        position: absolute;
-	        left: ($grid-gutter-width / 2);
-	        top: 14px;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
 
-	        @media (max-width: $screen-md-max) { 
+            @media (max-width: $screen-md-max) {
+                top: 10px;
+            }
 
-                top: 14px;
-	        }
+            h1 {
+                font-size: 24px;
+                text-align: center;
+                font-family: $font-family-serif;
+                margin: 0;
+            }
 
             img {
                 height: auto;
             }
+            
         }
-       	.menu {
 
-        	position: absolute;
-        	right: ($grid-gutter-width / 2);
-        	top: 0;
-
-        	@media (max-width: $screen-md-max) { 
-
-	        	display: none;
-	        }
+        .search {
+            position: absolute;
+            right: 0;
+            font-family: $font-family-semibold;
+            padding-top: 10px;
+            margin: 0;
         }
+
+        .menu {
+            position: absolute;
+            right: ($grid-gutter-width / 2);
+            top: 0;
+            @media (max-width: $screen-md-max) {
+                display: none;
+            }
+        }
+
     }
     .drawer-button {
 
@@ -55,21 +87,20 @@
         right: 0;
         top: 2px;
 
-        @media (max-width: $screen-md-max) { 
-			
-			display: block;
-		}
-        
-        > .icon {
+        @media (max-width: $screen-md-max) {
+            display: block;
+        }
 
+        >.icon {
             margin-top: 22px;
             position: relative;
             z-index: 1;
         }
-        &:hover, &:focus {
 
+        &:hover,
+        &:focus {
             color: rgba($title-color, 0.8);
         }
+
     }
 }
-
